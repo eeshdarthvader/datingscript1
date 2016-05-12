@@ -1,0 +1,127 @@
+/* Ion.RangeSlider, Flat UI Skin
+// css version 2.0.3
+// © Denis Ineshin, 2014    https://github.com/IonDen
+// ===================================================================================================================*/
+
+/* =====================================================================================================================
+// Skin details */
+
+.irs-line-mid,
+.irs-line-left,
+.irs-line-right,
+.irs-bar,
+.irs-bar-edge,
+.irs-slider {
+    /*background: url(../img/sprite-skin-flat.png) repeat-x;*/
+}
+
+/*.irs {
+    height: 40px;
+}
+.irs-with-grid {
+    height: 60px;
+}*/
+.irs-line {
+    height: 8px; top: 30px;
+	box-shadow: inset 2px 2px 6px 0px #ACACAC;
+-webkit-box-shadow: inset 2px 2px 6px 0px #ACACAC;
+-moz-box-shadow: inset 2px 2px 6px 0px #ACACAC;
+-o-box-shadow: inset 2px 2px 6px 0px #ACACAC;
+background:#e9e8e8;
+border-radius:10px;
+margin:0px 5px;
+}
+    .irs-line-left, .irs-line-mid, .irs-line-right  {
+        height: 8px;
+        /*background-position: 0 -30px;*/
+    }
+    
+
+.irs-bar {
+    height: 8px; top: 30px;
+	border-radius:10px;
+    /*background:#e93573;*/
+	background: rgb(237,130,167); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(237,130,167,1) 0%, rgba(230,0,79,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(237,130,167,1)), color-stop(100%,rgba(230,0,79,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(237,130,167,1) 0%,rgba(230,0,79,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(237,130,167,1) 0%,rgba(230,0,79,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(237,130,167,1) 0%,rgba(230,0,79,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(237,130,167,1) 0%,rgba(230,0,79,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ed82a7', endColorstr='#e6004f',GradientType=0 ); /* IE6-9 */
+
+}
+    .irs-bar-edge {
+        top: 25px;
+        height: 12px; width: 9px;
+        background-position: 0 -90px;
+    }
+
+.irs-shadow {
+    height: 3px; top: 34px;
+    background: #000;
+    opacity: 0.25;
+}
+.lt-ie9 .irs-shadow {
+    filter: alpha(opacity=25);
+}
+
+.irs-slider {
+    width: 10px; height: 15px;
+    top: 38px;
+    background:url(../images/icon-slide.png) no-repeat;
+}
+.irs-slider.state_hover, .irs-slider:hover {
+    background:url(../images/icon-slide-hover.png) no-repeat;
+}
+
+.irs-min, .irs-max {
+    color: #999;
+    font-size: 10px; line-height: 1.333;
+    text-shadow: none;
+    top: 0; padding: 1px 3px;
+    background: #e1e4e9;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.irs-from, .irs-to, .irs-single {
+    color: #696969;
+    font-size: 14px; line-height: 1.333;
+    text-shadow: none;
+    padding: 1px 0px;
+    /*background: #ed5565;
+    -moz-border-radius: 4px;
+    border-radius: 4px;*/
+}
+/*.irs-from:after, .irs-to:after, .irs-single:after {
+    position: absolute; display: block; content: "";
+    bottom: -6px; left: 50%;
+    width: 0; height: 0;
+    margin-left: -3px;
+    overflow: hidden;
+    border: 3px solid transparent;
+    border-top-color: #ed5565;
+}*/
+
+.slider-setting .irs-to, .slider-setting .irs-from {
+  display: none;
+}
+.irs-grid-pol {
+    background: #e1e4e9;
+}
+.irs-grid-text {
+    color: #999;
+}
+
+.irs-disabled {
+}
+.wntd-age .irs-from:before {
+  content: "Age";
+  display: inline-block;
+  margin-right:2px;
+}
+.wntd-age .irs-to:before {
+  content: "-";
+  display: inline-block;
+}

@@ -1,0 +1,85 @@
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
+                    class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a><a class="brand" href="<?php echo URL::to('/dashboard'); ?>">Dating Admin Panel </a>
+      <div class="nav-collapse">
+        <ul class="nav pull-right">
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+                            class="icon-cog"></i> Account <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="javascript:;">Settings</a></li>
+              <li><a href="javascript:;">Help</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+                            class="icon-user"></i> <?php echo Sentry::getUser()->first_name; ?> <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="javascript:;">Profile</a></li>
+              <li><a href="<?php echo URL::to('logout'); ?>">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+    <!-- /container -->
+  </div>
+  <!-- /navbar-inner -->
+</div>
+<!-- /navbar -->
+<div class="subnavbar">
+  <div class="subnavbar-inner">
+    <div class="container">
+      <ul class="mainnav">
+        <li <?php if(Request::segment(1) == 'dashboard'): ?> class="active" <?php else: ?>  <?php endif; ?> ><a href="<?php echo URL::to('/dashboard'); ?>"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
+
+        <li  <?php if(Request::segment(1) == 'users' or Request::segment(1) == 'admin' ): ?> class="dropdown active" <?php else: ?> class="dropdown"  <?php endif; ?>    ><a href="javascript:;"  class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i><span>Users</span> <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li> <a href="<?php echo URL::to('/users'); ?>" >User Managment</a></li>
+                <li><a href="<?php echo URL::to('/admin'); ?>">Admin Managment</a></li>
+              </ul>
+        </li>
+
+        <li <?php if(Request::segment(1) == 'gifts' or Request::segment(1) == 'interests'  ): ?> class="dropdown active" <?php else: ?> class="dropdown"  <?php endif; ?> ><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-list-alt"></i><span>Content</span> <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="<?php echo URL::to('/gifts'); ?>">Gifts</a></li>
+                <li><a href="<?php echo URL::to('/interests'); ?>">Interests</a></li>
+              </ul>
+        </li>
+
+        <li  <?php if(Request::segment(1) == 'app_settings' or Request::segment(1) == 'social' or Request::segment(1) == 'payment'): ?> class="dropdown active" <?php else: ?> class="dropdown"  <?php endif; ?>   ><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-cog"></i><span>Settings</span> <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="<?php echo URL::to('app_settings'); ?>">General Settings</a></li>
+                <li><a href="<?php echo URL::to('payment'); ?>">Payment Gateways</a></li>
+                <li><a href="<?php echo URL::to('social'); ?>">Social Network Settings</a></li>
+                <li><a href="<?php echo URL::to('seo'); ?>">Seo Settings</a></li>
+              </ul>
+        </li>
+
+
+        <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class=" icon-magic"></i><span>User Acquisition</span> <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="icons.html">Game Mechanics</a></li>
+            <li><a href="faq.html">Growth Hacking</a></li>
+          </ul>
+        </li>
+
+        <li  <?php if(Request::segment(1) == 'rewards' or Request::segment(1) == 'abuse' or Request::segment(1) == 'emails'): ?> class="dropdown active" <?php else: ?> class="dropdown"  <?php endif; ?>   ><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-beaker"></i><span>Misc</span> <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="<?php echo URL::to('/abuse'); ?>">Abuse Reports</a></li>
+                <li><a href="<?php echo URL::to('/rewards'); ?>">Rewards Managment</a></li>
+                <li><a href="<?php echo URL::to('/emails'); ?>">Email Managment</a></li>
+              </ul>
+        </li>
+
+
+
+
+      </ul>
+    </div>
+    <!-- /container -->
+  </div>
+  <!-- /subnavbar-inner -->
+</div>
+<!-- /subnavbar -->

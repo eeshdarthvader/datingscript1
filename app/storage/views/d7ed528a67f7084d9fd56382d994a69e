@@ -1,0 +1,163 @@
+<?php $__env->startSection('content'); ?>
+
+    <div class="row">
+            <div class="span6">
+                <div class="widget widget-nopad">
+                     <!-- widget-header -->
+                    <div class="widget-header">
+                        <i class="icon-list-alt"></i>
+                         <h3> Settings </h3>
+                    </div>
+                    <!-- /widget-header -->
+                      <!-- widget-content -->
+                     <div class="widget-content">
+                       <?php if(Session::has('success_setting')): ?>
+                         <div class="alert alert-success"><?php echo Session::get('success_setting'); ?></div>
+                       <?php endif; ?>
+                        <form action="<?php echo URL::to('premiumfeatures/settings'); ?>" method="post" id="sendmsg" class="form-horizontal">
+                                <br />
+
+                                <div class="control-group">
+                                    <label class="control-label" for="spotlightType">SpotLight Tpye</label>
+                                    <div class="controls">
+                                        <select  name="spotlightType">
+                                            <option value="single" <?php if($spotlightType == 'single'): ?>  selected="selected" <?php endif; ?> >Single</option>
+                                            <option value="double"  <?php if($spotlightType == 'double'): ?>  selected="selected" <?php endif; ?>>Double</option>
+                                        </select>
+                                    </div>    
+                                </div> <!-- /controls -->
+
+
+                                 <div class="control-group">
+                                    <label class="control-label" for="spotlight">SpotLight</label>
+                                    <div class="controls">
+                                        <select  name="spotlight">
+                                            <option value="enable" <?php if($spotlight == 'enable'): ?>  selected="selected" <?php endif; ?> >Enable</option>
+                                            <option value="disable"  <?php if($spotlight == 'disable'): ?>  selected="selected" <?php endif; ?>>Disable</option>
+                                        </select>
+                                    </div>    
+                                </div> <!-- /controls -->
+
+                                <div class="control-group">
+                                    <label class="control-label" for="riseup">Rise Up in Search</label>
+                                    <div class="controls">
+                                        <select  name="riseup">
+                                            <option value="enable" <?php if($riseup == 'enable'): ?>  selected="selected" <?php endif; ?> >Enable</option>
+                                            <option value="disable"  <?php if($riseup == 'disable'): ?>  selected="selected" <?php endif; ?>>Disable</option>
+                                        </select>
+                                    </div>    
+                                </div> <!-- /controls -->
+
+                                <div class="control-group">
+                                    <label class="control-label" for="superpower">Superpowers</label>
+                                    <div class="controls">
+                                        <select  name="superpower">
+                                            <option value="enable" <?php if($superpower == 'enable'): ?>  selected="selected" <?php endif; ?> >Enable</option>
+                                            <option value="disable"  <?php if($superpower == 'disable'): ?>  selected="selected" <?php endif; ?>>Disable</option>
+                                        </select>
+                                    </div>    
+                                </div> <!-- /controls -->
+
+                                <div class="control-group">
+                                    <label class="control-label" for="superpowerInvisiblity">Superpower Invisibility</label>
+                                    <div class="controls">
+                                        <select  name="superpowerInvisiblity">
+                                            <option value="enable" <?php if($superpowerInvisiblity == 'enable'): ?>  selected="selected" <?php endif; ?> >Enable</option>
+                                            <option value="disable"  <?php if($superpowerInvisiblity == 'disable'): ?>  selected="selected" <?php endif; ?>>Disable</option>
+                                        </select>
+                                    </div>    
+                                </div> <!-- /controls -->
+
+                                <div class="control-group">
+                                    <label class="control-label" for="superpowerMode">Superpower Mode</label>
+                                    <div class="controls">
+                                        <select  name="superpowerMode">
+                                            <option value="global" <?php if($superpowerMode == 'global'): ?>  selected="selected" <?php endif; ?> >Global</option>
+                                            <option value="country" <?php if($superpowerMode == 'country'): ?>  selected="selected" <?php endif; ?> >Country Based</option>
+                                            <option value="city"  <?php if($superpowerMode == 'city'): ?>  selected="selected" <?php endif; ?>>City Based</option>
+                                        </select>
+                                    </div>    
+                                </div> <!-- /controls --> 
+
+
+                             <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Save</button>
+                            <button class="btn">Cancel</button>
+                        </div> <!-- /form-actions -->
+                        </form><!-- /form -->
+
+                    </div>  <!-- /widget content -->
+                 </div>
+                 <!-- /widget -->
+            </div>
+            <!-- /span6 -->
+
+
+        </div>
+
+        <div class="row">
+            <div class="span6">
+                <div class="widget widget-nopad">
+                     <!-- widget-header -->
+                    <div class="widget-header">
+                        <i class="icon-list-alt"></i>
+                         <h3> Feature Cost </h3>
+                    </div>
+
+                    <!-- /widget-header -->
+                      <!-- widget-content -->
+                     <div class="widget-content">
+                       <?php if(Session::has('success_cost')): ?>
+                         <div class="alert alert-success"><?php echo Session::get('success_cost'); ?></div>
+                       <?php endif; ?>
+                        <form action="<?php echo URL::to('premiumfeatures/featurecost'); ?>" method="post" id="edit-profile" class="form-horizontal">
+                                <br />
+                                <div class="control-group">
+                                    <label class="control-label" for="superpower_credits">Superpower</label>
+                                    <div class="controls">
+                                        <input type="number" class="span4" id="superpower_credits" name="superpower_credits" placeholder="Credits" value="<?php echo $superpower_credits; ?>">
+                                    </div> <!-- /controls -->
+                                </div> <!-- /control-group -->
+
+                                <div class="control-group">
+                                    <label class="control-label" for="riseup_credits">Rise Up</label>
+                                    <div class="controls">
+                                        <input type="number" class="span4" id="riseup_credits" name="riseup_credits" placeholder="Credits" value="<?php echo $riseup_credits; ?>">
+                                    </div> <!-- /controls -->
+                                </div> <!-- /control-group -->
+
+                                <div class="control-group">
+                                    <label class="control-label" for="spotlight_credits">Spotlight</label>
+                                    <div class="controls">
+                                        <input type="number" class="span4" id="spotlight_credits" name="spotlight_credits" placeholder="Credits" value="<?php echo $spotlight_credits; ?>">
+                                    </div> <!-- /controls -->
+                                </div> <!-- /control-group -->
+
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">Save</button>
+                                </div> <!-- /form-actions -->
+
+                        </form><!-- /form --> 
+
+                    </div>  <!-- /widget content -->
+                 </div>
+                 <!-- /widget -->
+            </div>
+            <!-- /span6 -->
+        </div>
+
+
+       
+<?php $__env->stopSection(); ?>
+
+
+
+
+
+
+
+<?php $__env->startSection('custom-js'); ?>
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin.layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

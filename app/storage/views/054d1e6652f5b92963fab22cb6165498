@@ -1,0 +1,279 @@
+
+
+
+<?php $__env->startSection('content'); ?>
+
+    <div class="row">
+            <div class="span6">
+                <div class="widget widget-nopad">
+                     <!-- widget-header -->
+                    <div class="widget-header">
+                        <i class="icon-list-alt"></i>
+                         <h3> Add Interest Category </h3>
+                    </div>
+                    <!-- /widget-header -->
+                      <!-- widget-content -->
+                     <div class="widget-content">
+                       <?php if(Session::has('successcat')): ?>
+                         <div class="alert alert-success"><?php echo Session::get('successcat'); ?></div>
+                       <?php endif; ?>
+                        <form action="<?php echo URL::to('interests/createcategory'); ?>" method="post" id="edit-profile" class="form-horizontal">
+                                <br />
+                                <div class="control-group">
+                                    <label class="control-label" for="category_name">Name of Category</label>
+                                    <div class="controls">
+                                        <input type="text" class="span4" id="category_name" name="category_name" placeholder="Name of Category">
+                                    </div> <!-- /controls -->
+                                </div> <!-- /control-group -->
+
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">Create</button>
+                                </div> <!-- /form-actions -->
+
+                                 <?php if(Session::has('errors')): ?>
+                                      <span style="color: red;"> <?php echo $errors->first('category_name');; ?> </span><br>
+                                 <?php endif; ?>
+                        </form><!-- /form -->
+
+                    </div>  <!-- /widget content -->
+                 </div>
+                 <!-- /widget -->
+            </div>
+            <!-- /span6 -->
+
+            <?php if(!$categories_empty): ?>
+                  <div class="span6">
+                            <div class="widget widget-nopad">
+                                 <!-- widget-header -->
+                                <div class="widget-header">
+                                    <i class="icon-list-alt"></i>
+                                     <h3> Add Interest </h3>
+                                </div>
+                                <!-- /widget-header -->
+                                  <!-- widget-content -->
+                                 <div class="widget-content">
+                                   <?php if(Session::has('successint')): ?>
+                                     <div class="alert alert-success"><?php echo Session::get('successint'); ?></div>
+                                   <?php endif; ?>
+                                    <form action="<?php echo URL::to('interests/createinterest'); ?>" method="post" id="edit-profile" class="form-horizontal">
+                                            <br />
+                                            <div class="control-group">
+                                                <label class="control-label" for="interest_name">Name of Interest</label>
+                                                <div class="controls">
+                                                    <input type="text" class="span4" id="interest_name" name="interest_name" placeholder="Name of Interest">
+                                                </div> <!-- /controls -->
+                                            </div> <!-- /control-group -->
+
+                                              <div class="control-group">
+                                                   <label class="control-label" for="title">Interest Category</label>
+                                                   <div class="controls">
+                                                       <select class="span4" name="category">
+                                                           <?php foreach($categories as $cats): ?>
+                                                           <option value="<?php echo $cats->name; ?>"> <?php echo $cats->name; ?></option>
+                                                           <?php endforeach; ?>
+                                                       </select>
+                                                   </div> <!-- /controls -->
+                                               </div> <!-- /control-group -->
+
+
+                                            <div class="form-actions">
+                                                <button type="submit" class="btn btn-primary">Create</button>
+                                            </div> <!-- /form-actions -->
+
+                                             <?php if(Session::has('errors')): ?>
+                                                  <span style="color: red;"> <?php echo $errors->first('interest_name');; ?> </span>
+                                             <?php endif; ?>
+
+                                    </form><!-- /form -->
+
+                                </div>  <!-- /widget content -->
+                             </div>
+                             <!-- /widget -->
+                        </div>
+                        <!-- /span6 -->
+            <?php endif; ?>
+        </div>
+
+
+      <div class="row">
+
+
+                <div class="span12">
+
+                    <div class="widget ">
+
+                        <div class="widget-header">
+                            <i class="icon-user"></i>
+                            <h3>Interest Categories</h3>
+                        </div> <!-- /widget-header -->
+
+                        <div class="widget-content">
+
+                            <table class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Interest Category</th>
+                                            <th>Number of Interests</th>
+                                            <th style="width:5%">Delete</th>
+
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <?php foreach($categories as $cats): ?>
+                                            <tr class="interest-category-tr">
+                                                <td><?php echo $cats->name; ?></td>
+                                                <?php if($cats->interests): ?> <td><a href="javascript:;" class="interest_count"><?php echo $cats->interests_count(); ?></a> </td><?php else: ?> <td>0</td><?php endif; ?>
+                                                
+                                                 <td>
+                                                  <span style="font-size: 10px;" data-id="<?php echo $cats->id; ?>"  class="btn btn-danger btn-mini del_cat">Delete</span>
+                                                </td>
+                                            </tr>
+
+
+										<tr class="interest-tr" style="display:none;">
+
+                                            <td>
+
+                                                    <table class="table">
+                                                        <tbody>
+                                                            <?php foreach($cats->all_interests() as $interest): ?>
+
+                                                                <tr>
+                                                                    <td> <?php echo $interest->name; ?> </td>
+                                                                     <td>
+                                                                      <span style="font-size: 10px;" data-id="<?php echo $interest->id; ?>"  class="btn btn-danger btn-mini del_int">Delete</span>
+                                                                    </td>
+                                                                    
+                                                                </tr>
+
+                                                            <?php endforeach; ?>
+                                                        </tbody>
+                                                    </table>
+
+                                            </td>
+
+										</tr>
+
+
+                                        <?php endforeach; ?>
+                                    </tbody>
+                                </table>
+                        </div> <!-- /widget-content -->
+
+                    </div> <!-- /widget -->
+
+                </div> <!-- /span -->
+
+              </div> <!-- /row -->
+
+<div id="dialog_delete" title="DELETE" class="hide">
+    <p> Are you sure to DELETE this category ?</p>
+</div>
+
+<div id="dialog_delete_interest" title="DELETE" class="hide">
+    <p> Are you sure to DELETE this interest ?</p>
+</div>
+
+
+<?php $__env->stopSection(); ?>
+
+
+
+
+<?php $__env->startSection('custom-js'); ?>
+
+
+<script>
+
+$(function(){
+
+   $(".interest_count").click(function(){
+
+             var tr = $(this).parents('.interest-category-tr').get(0);
+
+            $(tr).next().toggle();
+
+    });
+
+   $( "#dialog_delete" ).dialog({
+        resizable: false,
+        autoOpen: false,
+        height: 210,
+        modal: true,
+        buttons: [
+        {
+            'class' : 'btn green',
+            "text" : "Delete",
+            click: function() {
+            var self = this;
+                $.post("<?php echo URL::to('/interests/deletecategory/'); ?>",{'id' : $(this).data('id')},function() {
+                    $(self).dialog( "close" );
+                    window.location.reload();
+            });
+            }
+        },
+        {
+            'class' : 'btn',
+            "text" : "Cancel",
+            click: function() {
+                $(this).dialog( "close" );
+            }
+        }]
+    }); 
+
+    $( "#dialog_delete_interest" ).dialog({
+        resizable: false,
+        autoOpen: false,
+        height: 210,
+        modal: true,
+        buttons: [
+        {
+            'class' : 'btn green',
+            "text" : "Delete",
+            click: function() {
+            var self = this;
+                $.post("<?php echo URL::to('/interests/deleteinterest/'); ?>",{'id' : $(this).data('id')},function() {
+                    $(self).dialog( "close" );
+                    window.location.reload();
+            });
+            }
+        },
+        {
+            'class' : 'btn',
+            "text" : "Cancel",
+            click: function() {
+                $(this).dialog( "close" );
+            }
+        }]
+    }); 
+
+
+    $(".del_cat").click(function(e){
+
+        var id = $(e.target).data('id');
+        $("#dialog_delete").data('id', id);
+        $( "#dialog_delete" ).dialog( "open" );
+    }) 
+
+    $(".del_int").click(function(e){
+
+        var id = $(e.target).data('id');
+        $("#dialog_delete_interest").data('id', id);
+        $( "#dialog_delete_interest" ).dialog( "open" );
+    }) 
+
+
+});
+
+
+
+</script>
+
+
+
+
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin.layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

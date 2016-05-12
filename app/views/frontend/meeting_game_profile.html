@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LEZUM</title>
+
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" type="text/css">
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/demo.css" />
+<link rel="stylesheet" type="text/css" href="css/jquery.jscrollpane.css" media="all" />
+<link rel="stylesheet" href="css/ion.rangeSlider.css" />
+<link rel="stylesheet" href="css/ion.rangeSlider.skinFlat.css" />
+<link href="css/bootstrap-select.css" rel="stylesheet" type="text/css">
+<!-- custom scrollbar stylesheet -->
+<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<div class="wrap">
+	<div class="header">
+		<div class="container">
+			<div class="head-txt">
+				<div class="row">
+					<div class="col-sm-9">
+						<div class="logo"> <a href="index.html"><img src="images/logo-main.png" alt="..."></a> </div>
+						<div class="left-txt"> <i class="fa fa-caret-right right1"></i> My location is Paju </div>
+						<div class="left-txt"> <i class="fa fa-caret-right right1"></i> I like to date with male ages 25~30 </div>
+						<div class="collapse navbar-collapse bs-example-js-navbar-collapse map-marker">
+							<div class="nav navbar-nav">
+								<div class="dropdown drop"> <a aria-expanded="false" role="button" aria-haspopup="true" data-toggle="dropdown" class="dropdown-toggle" href="#" id="drop1"> <i class="fa fa-map-marker map"></i> Change </a>
+									<div aria-labelledby="drop1" role="menu" class="dropdown-menu bor"> <span class="x">x</span>
+										<div class="arrow-up"></div>
+										<div class="arrow-up-1"></div>
+										<h4>Share your information to let others know more about you.<br>
+											Please don't forget to input your information for easy and joyful  meeting. </h4>
+										<div class="row">
+											<div class="col-sm-3">
+												<div class="drop-cover">
+													<div class="heading-drop">
+														<h4>I'm here to</h4>
+													</div>
+													<div class="check-b">
+														<form class="form-control ab-form">
+															<div class="custom-check">
+																<input type="checkbox" class="check" checked="checked" name="checkbox1" id="no1">
+																<label class="label-check" for="no1">Make new friends </label>
+															</div>
+															<div class="custom-check">
+																<input type="checkbox" class="check" checked="checked" name="checkbox2" id="no2">
+																<label class="label-check" for="no2">Chat </label>
+															</div>
+															<div class="custom-check">
+																<input type="checkbox" class="check" checked="checked" name="checkbox3" id="no3">
+																<label class="label-check" for="no3">Date</label>
+															</div>
+														</form>
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-3">
+												<div class="drop-cover">
+													<div class="heading-drop">
+														<h4>Wanted ages</h4>
+													</div>
+													<div class="check-b wntd-age">
+														<ul>
+															<li>
+																<div class="custom-radio">
+																	<input type="radio" class="custom-rad" name="radio" id="no-1">
+																	<label class="label" for="no-1">Male</label>
+																</div>
+															</li>
+															<li>
+																<div class="custom-radio">
+																	<input type="radio" class="custom-rad" name="radio" id="no-2">
+																	<label class="label" for="no-2">Female</label>
+																</div>
+															</li>
+														</ul>
+														<!--<h3>Age 18-80</h3>--> 
+														<!--<img src="images/bar.png" alt="...">-->
+														<input type="text" id="range" value="" name="range" />
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-3">
+												<div class="drop-cover">
+													<div class="heading-drop">
+														<h4>Where(Distance from me)</h4>
+													</div>
+													<div class="check-b slider-setting">
+														<div class="search-box">
+															<input type="text" class="form-control text" placeholder="Paju, Kyuonggi-Do">
+															<i class="fa fa-search cus-search"></i> </div>
+														<!--<h3>50Km</h3>
+														<img src="images/bar2.png" alt="...">-->
+														<input type="text" id="single" value="" name="range" />
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-3">
+												<div class="drop-cover">
+													<div class="heading-drop">
+														<h4>Lorem ipsum</h4>
+													</div>
+													<div class="check-b">
+														<div class="search-box">
+															<input type="text" class="form-control text" placeholder="Bycile">
+															<i class="fa fa-search cus-search"></i> </div>
+														<p>Please reg. your interest section. Registring interest make you easier communication with other members.</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="new-btns">
+											<button type="button" class="btn btn-ook">Save update</button>
+											<button type="button" class="btn btn-ook1">Cancel</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="btns">
+							<button type="button" class="btn btn-left"><img src="images/crown.png" alt="...">3400 Credits</button>
+							<div class="dropdown btn-left-1"> <a aria-expanded="false" role="button" aria-haspopup="true" data-toggle="dropdown" class="dropdown-toggle" href="#" id="drop2"><img src="images/setting.png" alt="..."> <span class="cchi">cchiwhoo</span> <span class="caret a-car"></span> </a>
+								<div aria-labelledby="drop2" role="menu" class="dropdown-menu dp">
+									<div class="arrow-upp"></div>
+									<div class="arrow-up-2"></div>
+									<div class="dp-img"> <img src="images/dp.png" alt="...">
+										<h4>Configuration My Information</h4>
+										<button type="button" class="btn btn-log">LOGOUT</button>
+									</div>
+								</div>
+							</div>
+							
+							<!--<button type="button" class="btn btn-left-1">Setting <i class="fa fa-caret-down down-c"></i></button>--> 
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="bottom-head">
+		<div class="container">
+			<div class="right-txt">
+				<div class="lorem">
+					<p>"I like" Add more filters for matching members</p>
+					<span class="bg-w1">
+					<div class="btn-group" data-toggle="buttons">
+						<label class="btn like-check">
+							<input type="checkbox" autocomplete="off" >
+						</label>
+					</div>
+					</span> <a href="javascript:void(0);"><img src="images/bing.png" alt="..."> See online members</a> </div>
+				<div class="conn"> <span>now connecting</span><span class="green">144,583,323</span> </div>
+				<div class="conn"> <span>members</span><span class="green">12,356,886,546</span> </div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- content slider -->
+	
+	<div class="cover-div">
+		<div class="container">
+			<div class="slider">
+				<div class="row">
+					<div class="col-xs-12 pd-left">
+						<div class="boys"> <img src="images/boys.png" alt="..."> </div>
+						<div class="ca-container" id="ca-container">
+							<div class="ca-nav"> <span class="ca-nav-prev">Previous</span> <span class="ca-nav-next">Next</span> </div>
+							<div class="ca-wrapper" style="overflow: hidden;">
+								<div class="ca-item ca-item-8" style="position: absolute; left: 0px;">
+									<div class="ca-item-main">
+										<div class="ca-icon"></div>
+										<div class="name"> <a href="#">
+											<h4>cchiwhoo(21)</h4>
+											<h4>Paju</h4>
+											</a> </div>
+									</div>
+								</div>
+								<div class="ca-item ca-item-1" style="position: absolute; left: 330px;">
+									<div class="ca-item-main">
+										<div class="ca-icon"></div>
+										<div class="name"> <a href="#">
+											<h4>cchiwhoo(21)</h4>
+											<h4>Paju</h4>
+											</a> </div>
+									</div>
+								</div>
+								<div class="ca-item ca-item-2" style="position: absolute; left: 660px;">
+									<div class="ca-item-main">
+										<div class="ca-icon"></div>
+										<div class="name"> <a href="#">
+											<h4>cchiwhoo(21)</h4>
+											<h4>Paju</h4>
+											</a> </div>
+									</div>
+								</div>
+								<div class="ca-item ca-item-3" style="position: absolute; left: 990px;">
+									<div class="ca-item-main">
+										<div class="ca-icon"></div>
+										<div class="name"> <a href="#">
+											<h4>cchiwhoo(21)</h4>
+											<h4>Paju</h4>
+											</a> </div>
+									</div>
+								</div>
+								<div class="ca-item ca-item-4" style="position: absolute; left: 1320px;">
+									<div class="ca-item-main">
+										<div class="ca-icon"></div>
+										<div class="name"> <a href="#">
+											<h4>cchiwhoo(21)</h4>
+											<h4>Paju</h4>
+											</a> </div>
+									</div>
+								</div>
+								<div class="ca-item ca-item-5" style="position: absolute; left: 1650px;">
+									<div class="ca-item-main">
+										<div class="ca-icon"></div>
+										<div class="name"> <a href="#">
+											<h4>cchiwhoo(21)</h4>
+											<h4>Paju</h4>
+											</a> </div>
+									</div>
+								</div>
+								<div class="ca-item ca-item-6" style="position: absolute; left: 1980px;">
+									<div class="ca-item-main">
+										<div class="ca-icon"></div>
+										<div class="name"> <a href="#">
+											<h4>cchiwhoo(21)</h4>
+											<h4>Paju</h4>
+											</a> </div>
+									</div>
+								</div>
+								<div class="ca-item ca-item-7" style="position: absolute; left: 2310px;">
+									<div class="ca-item-main">
+										<div class="ca-icon"></div>
+										<div class="name"> <a href="#">
+											<h4>cchiwhoo(21)</h4>
+											<h4>Paju</h4>
+											</a> </div>
+									</div>
+								</div>
+								<div class="ca-item ca-item-1" style="position: absolute; left: 330px;">
+									<div class="ca-item-main">
+										<div class="ca-icon"></div>
+										<div class="name"> <a href="#">
+											<h4>cchiwhoo(21)</h4>
+											<h4>Paju</h4>
+											</a> </div>
+									</div>
+								</div>
+								<div class="ca-item ca-item-6" style="position: absolute; left: 1980px;">
+									<div class="ca-item-main">
+										<div class="ca-icon"></div>
+										<div class="name"> <a href="#">
+											<h4>cchiwhoo(21)</h4>
+											<h4>Paju</h4>
+											</a> </div>
+									</div>
+								</div>
+								<div class="ca-item ca-item-4" style="position: absolute; left: 1320px;">
+									<div class="ca-item-main">
+										<div class="ca-icon"></div>
+										<div class="name"> <a href="#">
+											<h4>cchiwhoo(21)</h4>
+											<h4>Paju</h4>
+											</a> </div>
+									</div>
+								</div>
+								<div class="ca-item ca-item-5" style="position: absolute; left: 1650px;">
+									<div class="ca-item-main">
+										<div class="ca-icon"></div>
+										<div class="name"> <a href="#">
+											<h4>cchiwhoo(21)</h4>
+											<h4>Paju</h4>
+											</a> </div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="slider-1">
+				<div class="row">
+					<div class="col-xs-12 pd-left">
+						<div class="boys"> <img src="images/girls.png" alt="..."> </div>
+						<div class="ca-container" id="ca-container-1">
+							<div class="ca-nav"> <span class="ca-nav-prev">Previous</span> <span class="ca-nav-next">Next</span> </div>
+							<div class="ca-wrapper" style="overflow: hidden;">
+								<div class="ca-item ca-item-8" style="position: absolute; left: 0px;">
+									<div class="ca-item-main">
+										<div class="new-img"></div>
+										<div class="name"> <a href="#">
+											<h4>hyena kim(26)</h4>
+											<h4>Seoul</h4>
+											</a> </div>
+									</div>
+								</div>
+								<div class="ca-item ca-item-1" style="position: absolute; left: 330px;">
+									<div class="ca-item-main">
+										<div class="new-img1"></div>
+										<div class="name"> <a href="#">
+											<h4>hyena kim(26)</h4>
+											<h4>Seoul</h4>
+											</a> </div>
+									</div>
+								</div>
+								<div class="ca-item ca-item-2" style="position: absolute; left: 660px;">
+									<div class="ca-item-main">
+										<div class="new-img"></div>
+										<div class="name"> <a href="#">
+											<h4>hyena kim(26)</h4>
+											<h4>Seoul</h4>
+											</a> </div>
+									</div>
+								</div>
+								<div class="ca-item ca-item-3" style="position: absolute; left: 990px;">
+									<div class="ca-item-main">
+										<div class="new-img1"></div>
+										<div class="name"> <a href="#">
+											<h4>hyena kim(26)</h4>
+											<h4>Seoul</h4>
+											</a> </div>
+									</div>
+								</div>
+								<div class="ca-item ca-item-4" style="position: absolute; left: 1320px;">
+									<div class="ca-item-main">
+										<div class="new-img"></div>
+										<div class="name"> <a href="#">
+											<h4>hyena kim(26)</h4>
+											<h4>Seoul</h4>
+											</a> </div>
+									</div>
+								</div>
+								<div class="ca-item ca-item-5" style="position: absolute; left: 1650px;">
+									<div class="ca-item-main">
+										<div class="new-img1"></div>
+										<div class="name"> <a href="#">
+											<h4>hyena kim(26)</h4>
+											<h4>Seoul</h4>
+											</a> </div>
+									</div>
+								</div>
+								<div class="ca-item ca-item-6" style="position: absolute; left: 1980px;">
+									<div class="ca-item-main">
+										<div class="new-img"></div>
+										<div class="name"> <a href="#">
+											<h4>hyena kim(26)</h4>
+											<h4>Seoul</h4>
+											</a> </div>
+									</div>
+								</div>
+								<div class="ca-item ca-item-7" style="position: absolute; left: 2310px;">
+									<div class="ca-item-main">
+										<div class="new-img1"></div>
+										<div class="name"> <a href="#">
+											<h4>hyena kim(26)</h4>
+											<h4>Seoul</h4>
+											</a> </div>
+									</div>
+								</div>
+								<div class="ca-item ca-item-1" style="position: absolute; left: 330px;">
+									<div class="ca-item-main">
+										<div class="new-img"></div>
+										<div class="name"> <a href="#">
+											<h4>hyena kim(26)</h4>
+											<h4>Seoul</h4>
+											</a> </div>
+									</div>
+								</div>
+								<div class="ca-item ca-item-6" style="position: absolute; left: 1980px;">
+									<div class="ca-item-main">
+										<div class="new-img1"></div>
+										<div class="name"> <a href="#">
+											<h4>hyena kim(26)</h4>
+											<h4>Seoul</h4>
+											</a> </div>
+									</div>
+								</div>
+								<div class="ca-item ca-item-4" style="position: absolute; left: 1320px;">
+									<div class="ca-item-main">
+										<div class="new-img"></div>
+										<div class="name"> <a href="#">
+											<h4>hyena kim(26)</h4>
+											<h4>Seoul</h4>
+											</a> </div>
+									</div>
+								</div>
+								<div class="ca-item ca-item-5" style="position: absolute; left: 1650px;">
+									<div class="ca-item-main">
+										<div class="new-img1"></div>
+										<div class="name"> <a href="#">
+											<h4>hyena kim(26)</h4>
+											<h4>Seoul</h4>
+											</a> </div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- content slider ends -->
+	
+	<div class="container">
+		<div class="navigation">
+			<ul>
+				<li><a href="javascript:void(0);">Members nearby</a></li>
+				<li><a href="javascript:void(0);">Photo certified</a></li>
+				<li class="active"><a href="javascript:void(0);">Encounters</a></li>
+				<li><a href="javascript:void(0);">Messages</a></li>
+				<li><a href="javascript:void(0);">Liked you</a></li>
+				<li><a href="javascript:void(0);">I like</a></li>
+				<li><a href="javascript:void(0);">Global popularity contest</a></li>
+				<li><a href="javascript:void(0);"><i class="fa fa-caret-down c-down"></i></a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="profiles">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="user-profile">
+						<div class="pro-dp"> <img src="images/img-1.png" alt="...">
+							<div class="plus-sign"> <i class="fa fa-plus pls"></i> </div>
+						</div>
+						<div class="name-info">
+							<h3>My Popularity</h3>
+							<h3 class="white">Level 3-36 Point</h3>
+							<a href="javascript:void(0);">Increase<br>
+							My Populairty</a> </div>
+					</div>
+					<div class="user-profile">
+						<ul>
+							<li><a href="javascript:void(0);">Profile visitors</a> <span class="cover-sp"> <span class="bubble">546</span><i class="left-caret"></i> </span> </li>
+							<li><a href="javascript:void(0);">My friends</a> <span class="cover-sp"> <span class="bubble">23</span><i class="left-caret"></i> </span> </li>
+							<li><a href="javascript:void(0);">Favorites</a> <span class="cover-sp"> <span class="bubble">19</span><i class="left-caret"></i> </span> </li>
+							<li><a href="javascript:void(0);">Interested friends</a> <span class="cover-sp"> <span class="bubble">7</span><i class="left-caret"></i> </span> </li>
+							<li><a href="javascript:void(0);">Matched members</a> <span class="cover-sp"> <span class="bubble">32</span><i class="left-caret"></i> </span> </li>
+							<li><a href="javascript:void(0);">Blocked members</a> <span class="cover-sp"> <span class="bubble">54</span><i class="left-caret"></i> </span> </li>
+							<li><a href="javascript:void(0);">My popularity</a> <span class="cover-sp"> <span class="bubble">Lev.5 </span><i class="left-caret"></i> </span> </li>
+							<li><a href="javascript:void(0);">Event</a> <span class="cover-sp"> <span class="bubble">8</span><i class="left-caret"></i> </span> </li>
+						</ul>
+						<div class="btns-1"> <a href="javascript:void(0);">
+							<div class="dollar-btn">
+								<div class="inner-dollar"></div>
+								<h3>Point Exchange</h3>
+							</div>
+							</a> <a href="javascript:void(0);">
+							<div class="dollar-btn1">
+								<div class="inner-dollar1"></div>
+								<h3>Premium Active</h3>
+							</div>
+							</a> </div>
+					</div>
+				</div>
+				<div class="col-sm-9">
+					<div class="meeting-game-right-part">
+						<div class="meeting-profile">
+							<div class="meeting-pro-tag"><img src="images/profile-tag.png" alt="..."></div>
+							<div class="meeting-profile-top">
+								<div class="row">
+									<div class="col-sm-4">
+										<div class="meeting-pro-detail">
+											<h1>Hyun-A Kim <span>mobile</span></h1>
+											<p>Common Friends <span>04</span></p>
+											<p>Common interests <span>16</span></p>
+										</div>
+									</div>
+									<div class="col-sm-8">
+										<div class="meet-pro-right-options">
+											<ul>
+												<li><a href="javascript:void(0)" data-toggle="modal" data-target="#myModal"><img src="images/icon-like.png" alt="..."> I like</a></li>
+												<li><a href="javascript:void(0)"><img src="images/icon-discard.png" alt="..."> Discard</a></li>
+												<li><a href="javascript:void(0)"><img src="images/icon-share.png" alt="..."> Share</a></li>
+												<li><a href="javascript:void(0)" data-toggle="modal" data-target="#view-profile-pop"><img src="images/icon-profile.png" alt="..."> View profile</a></li>
+											</ul>
+											<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+												<div class="modal-dialog">
+													<div class="modal-content">
+														<div class="modal-header">
+															<button type="button" class="close close-bg" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+															<h4 class="modal-title title-setting">The game is over<br>
+																Make more opportunities.</h4>
+														</div>
+														<div class="modal-body game-over">
+															<div class="row">
+																<div class="col-xs-4">
+																	<div class="more-opportunities-box"> <img src="images/profile-pic.png" alt="...">
+																		<div class="more-op-btm-option">
+																			<ul>
+																				<li><a href="javascript:void(0)"><i class="fa fa-camera"></i> 15</a></li>
+																				<li><a href="javascript:void(0)"><i class="fa fa-video-camera"></i> 1</a></li>
+																				<li><span>ON</span></li>
+																			</ul>
+																		</div>
+																	</div>
+																</div>
+																<div class="col-xs-4">
+																	<div class="more-opportunities-box"> <img src="images/profile-pic.png" alt="...">
+																		<div class="more-op-btm-option">
+																			<ul>
+																				<li><a href="javascript:void(0)"><i class="fa fa-camera"></i> 15</a></li>
+																				<li><a href="javascript:void(0)"><i class="fa fa-video-camera"></i> 1</a></li>
+																				<li><span>ON</span></li>
+																			</ul>
+																		</div>
+																	</div>
+																</div>
+																<div class="col-xs-4">
+																	<div class="more-opportunities-box"> <img src="images/profile-pic.png" alt="...">
+																		<div class="more-op-btm-option">
+																			<ul>
+																				<li><a href="javascript:void(0)"><i class="fa fa-camera"></i> 15</a></li>
+																				<li><a href="javascript:void(0)"><i class="fa fa-video-camera"></i> 1</a></li>
+																				<li><span>ON</span></li>
+																			</ul>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<p>You have chosen above member(s).<br>
+																Send requests to them and to your friends on Facebook and get them interested on you.</p>
+															<div class="popup-btm-btn">
+																<ul>
+																	<li class="pop-send-btn"><a href="javascript:void(0)">Send</a></li>
+																	<li class="pop-continue-btn"><a href="javascript:void(0)">Continue</a></li>
+																</ul>
+															</div>
+														</div>
+														<!--<div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>--> 
+													</div>
+													<!-- /.modal-content --> 
+												</div>
+												<!-- /.modal-dialog --> 
+											</div>
+											<!-- /.modal -->
+											
+											<div class="modal fade" id="view-profile-pop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+												<div class="modal-dialog">
+													<div class="modal-content">
+														<div class="modal-header pop-personal1">
+															<button type="button" class="close close-bg" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+														</div>
+														<div class="modal-body game-over">
+															<h3>Hyun-A Kim's<br>
+																profile has been filled out more than you
+																If you would like to know more about her, 
+																you must complete your profile more than 50%</h3>
+															<p>When you fill more detailed profile , <br>
+																you can see more information of other members.</p>
+															<div class="popup-btm-btn pop-personal-btn">
+																<ul>
+																	<li class="pop-send-btn"><a href="javascript:void(0)">Add my profile</a></li>
+																	<li class="pop-continue-btn"><a href="javascript:void(0)">Cancel</a></li>
+																</ul>
+															</div>
+														</div>
+														<!--<div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>--> 
+													</div>
+													<!-- /.modal-content --> 
+												</div>
+												<!-- /.modal-dialog --> 
+											</div>
+											<!-- /.modal --> 
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="pics">
+								<div class="pic-count"> <i class="fa fa-camera"></i> 2 </div>
+								<ul>
+									<li><a href="javascript:void(0)"><img src="images/pic-1.jpg" alt="..."></a></li>
+									<li><a href="javascript:void(0)"><img src="images/pic-2.jpg" alt="..."></a></li>
+								</ul>
+							</div>
+							<div class="pics mr-b20">
+								<div class="pic-count"> <i class="fa fa-video-camera"></i> 1 </div>
+								<ul>
+									<li><a href="javascript:void(0)"><img src="images/video-1.jpg" alt="..."></a></li>
+								</ul>
+							</div>
+							<div class="row">
+								<div class="col-sm-3">
+									<div class="m-game-pro-left">
+										<div class="left-option">
+											<h1>Location</h1>
+											<p>Paju, Kyoung-Gi Do</p>
+										</div>
+									</div>
+									<div class="m-game-pro-left">
+										<div class="left-option">
+											<h1>I'm here to</h1>
+											<p>CHat</p>
+										</div>
+									</div>
+									<div class="m-game-pro-left">
+										<div class="left-option">
+											<h1>Interests  ( <span>8</span> )</h1>
+											<p>Bycle, football, </p>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="view-friends">
+										<h1>View my friends</h1>
+										<div id="content-7" class="content">
+											<div class="my-friends">
+												<ul>
+													<li><a href="javascript:void(0)"><img src="images/friend-img-1.jpg" alt="..."></a></li>
+													<li><a href="javascript:void(0)"><img src="images/friend-img-1.jpg" alt="..."></a></li>
+													<li><a href="javascript:void(0)"><img src="images/friend-img-1.jpg" alt="..."></a></li>
+													<li><a href="javascript:void(0)"><img src="images/friend-img-1.jpg" alt="..."></a></li>
+													<li><a href="javascript:void(0)"><img src="images/friend-img-1.jpg" alt="..."></a></li>
+													<li><a href="javascript:void(0)"><img src="images/friend-img-1.jpg" alt="..."></a></li>
+													<li><a href="javascript:void(0)"><img src="images/friend-img-1.jpg" alt="..."></a></li>
+													<li><a href="javascript:void(0)"><img src="images/friend-img-1.jpg" alt="..."></a></li>
+													<li><a href="javascript:void(0)"><img src="images/friend-img-1.jpg" alt="..."></a></li>
+													<li><a href="javascript:void(0)"><img src="images/friend-img-1.jpg" alt="..."></a></li>
+													<li><a href="javascript:void(0)"><img src="images/friend-img-1.jpg" alt="..."></a></li>
+													<li><a href="javascript:void(0)"><img src="images/friend-img-1.jpg" alt="..."></a></li>
+													<li><a href="javascript:void(0)"><img src="images/friend-img-1.jpg" alt="..."></a></li>
+													<li><a href="javascript:void(0)"><img src="images/friend-img-1.jpg" alt="..."></a></li>
+													<li><a href="javascript:void(0)"><img src="images/friend-img-1.jpg" alt="..."></a></li>
+													<li><a href="javascript:void(0)"><img src="images/friend-img-1.jpg" alt="..."></a></li>
+													<li><a href="javascript:void(0)"><img src="images/friend-img-1.jpg" alt="..."></a></li>
+													<li><a href="javascript:void(0)"><img src="images/friend-img-1.jpg" alt="..."></a></li>
+													<li><a href="javascript:void(0)"><img src="images/friend-img-1.jpg" alt="..."></a></li>
+													<li><a href="javascript:void(0)"><img src="images/friend-img-1.jpg" alt="..."></a></li>
+													<li><a href="javascript:void(0)"><img src="images/friend-img-1.jpg" alt="..."></a></li>
+													<li><a href="javascript:void(0)"><img src="images/friend-img-1.jpg" alt="..."></a></li>
+													<li><a href="javascript:void(0)"><img src="images/friend-img-1.jpg" alt="..."></a></li>
+													<li><a href="javascript:void(0)"><img src="images/friend-img-1.jpg" alt="..."></a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="personal-info">
+										<h1>Personal information</h1>
+										<ul>
+											<li>Love Mode <span><a href="javascript:void(0)">view</a></span></li>
+											<li>Sexual Identity <span><a href="javascript:void(0)">view</a></span></li>
+											<li>Appearance <span><a href="javascript:void(0)">view</a></span></li>
+											<li>Residence Type<span><a href="javascript:void(0)">view</a></span></li>
+											<li>Children <span><a href="javascript:void(0)">view</a></span></li>
+											<li>Smoking <span><a href="javascript:void(0)">view</a></span></li>
+											<li>Drinking Capacity <span><a href="javascript:void(0)">view</a></span></li>
+											<li>Academic Career <span><a href="javascript:void(0)">view</a></span></li>
+											<li>Language <span><a href="javascript:void(0)">view</a></span></li>
+											<li>Job <span><a href="javascript:void(0)">view</a></span></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-12">
+									<div class="add-m-profile">
+										<div class="row">
+											<div class="col-sm-8">
+												<p>Do you like to see more common interests?<br>
+													Please add more interests in your profile.</p>
+											</div>
+											<div class="col-sm-4"> <a href="javascript:void(0)" class="btn-add-profile">Add my profile</a> </div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="points-of-popularity-main">
+								<div class="points-op">
+									<h1>Points of Popularity</h1>
+									<div class="points-op-detail">
+										<p>34 members have sent vitual gift to you</p>
+										<h2>Level.4 -98Pts</h2>
+									</div>
+								</div>
+								<div class="attract-gift">
+									<h1 data-toggle="modal" data-target="#choose-payment">Attract with gift</h1>
+									<div class="attract-gift-detail">
+										<ul>
+											<li><a href="javascript:void(0)"  data-toggle="modal" data-target="#pop-gift-main">Attract attention with gift</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="modal fade" id="pop-gift-main" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header pop-personal1">
+												<button type="button" class="close close-bg" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+											</div>
+											<div class="modal-body game-over pop-gift">
+												<h3>Express your interest sending gift.</h3>
+												<p>Gifts are a great way to reach others with good impression.<br>
+													Members receiving your gift will be to express gratitude to you <br>
+													<span>Received a lot of gifts members are more likely to win a popularity contest. Send a gift to a member that you like.</span></p>
+												<div class="gift-credit">
+													<ul>
+														<li>My Credit</li>
+														<li><span>170,000 POINT</span></li>
+													</ul>
+												</div>
+												<div role="tabpanel"> 
+													
+													<!-- Nav tabs -->
+													<ul class="nav nav-tabs gift-to" role="tablist">
+														<li role="presentation" class="active"><a href="#female-mem" aria-controls="female-mem" role="tab" data-toggle="tab">Gift to female members</a></li>
+														<li role="presentation"><a href="#male-mem" aria-controls="male-mem" role="tab" data-toggle="tab">Gift to male members</a></li>
+													</ul>
+													
+													<!-- Tab panes -->
+													<div class="tab-content">
+														<div role="tabpanel" class="tab-pane active" id="female-mem">
+															<div class="choose-gifts-main">
+																<div class="choose-gifts">
+																	<div class="choose-gifts-img">
+																		<div class="btn-group choose-gift-check" data-toggle="buttons">
+																			<label class="btn like-check">
+																				<input type="checkbox" autocomplete="off" >
+																			</label>
+																		</div>
+																		<img src="images/gift-img.jpg" alt="..."> </div>
+																	<p>Blue Diamond</p>
+																	<p><span>345point</span></p>
+																</div>
+																<div class="choose-gifts">
+																	<div class="choose-gifts-img">
+																		<div class="btn-group choose-gift-check" data-toggle="buttons">
+																			<label class="btn like-check">
+																				<input type="checkbox" autocomplete="off" >
+																			</label>
+																		</div>
+																		<img src="images/gift-img.jpg" alt="..."> </div>
+																	<p>Blue Diamond</p>
+																	<p><span>345point</span></p>
+																</div>
+																<div class="choose-gifts">
+																	<div class="choose-gifts-img">
+																		<div class="btn-group choose-gift-check" data-toggle="buttons">
+																			<label class="btn like-check">
+																				<input type="checkbox" autocomplete="off" >
+																			</label>
+																		</div>
+																		<img src="images/gift-img.jpg" alt="..."> </div>
+																	<p>Blue Diamond</p>
+																	<p><span>345point</span></p>
+																</div>
+																<div class="choose-gifts">
+																	<div class="choose-gifts-img">
+																		<div class="btn-group choose-gift-check" data-toggle="buttons">
+																			<label class="btn like-check">
+																				<input type="checkbox" autocomplete="off" >
+																			</label>
+																		</div>
+																		<img src="images/gift-img.jpg" alt="..."> </div>
+																	<p>Blue Diamond</p>
+																	<p><span>345point</span></p>
+																</div>
+															</div>
+														</div>
+														<div role="tabpanel" class="tab-pane" id="male-mem">
+															<div class="choose-gifts-main">
+																<div class="choose-gifts">
+																	<div class="choose-gifts-img">
+																		<div class="btn-group choose-gift-check" data-toggle="buttons">
+																			<label class="btn like-check">
+																				<input type="checkbox" autocomplete="off" >
+																			</label>
+																		</div>
+																		<img src="images/gift-img.jpg" alt="..."> </div>
+																	<p>Blue Diamond</p>
+																	<p><span>345point</span></p>
+																</div>
+																<div class="choose-gifts">
+																	<div class="choose-gifts-img">
+																		<div class="btn-group choose-gift-check" data-toggle="buttons">
+																			<label class="btn like-check">
+																				<input type="checkbox" autocomplete="off" >
+																			</label>
+																		</div>
+																		<img src="images/gift-img.jpg" alt="..."> </div>
+																	<p>Blue Diamond</p>
+																	<p><span>345point</span></p>
+																</div>
+																<div class="choose-gifts">
+																	<div class="choose-gifts-img">
+																		<div class="btn-group choose-gift-check" data-toggle="buttons">
+																			<label class="btn like-check">
+																				<input type="checkbox" autocomplete="off" >
+																			</label>
+																		</div>
+																		<img src="images/gift-img.jpg" alt="..."> </div>
+																	<p>Blue Diamond</p>
+																	<p><span>345point</span></p>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="comment-with-gift">
+													<label>Write comments with gift</label>
+													<input type="text" class="form-control" >
+												</div>
+												<div class="popup-btm-btn pop-personal-btn">
+													<ul>
+														<li class="pop-send-btn"><a href="javascript:void(0)"  data-dismiss="modal" data-toggle="modal" data-target="#sent-a-gift">Proceed</a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+										<!-- /.modal-content --> 
+									</div>
+									<!-- /.modal-dialog --> 
+								</div>
+								<!-- /.modal -->
+								
+								<div class="modal fade" id="sent-a-gift" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header pop-personal1">
+												<button type="button" class="close close-bg" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+											</div>
+											<div class="modal-body game-over pop-gift text-left">
+												<h3>Sent a gift .</h3>
+												<p>Your gift has been sent to Hyun-A Kim.<br>
+													Hyun-A Kim's popularity point has risen 000 points scored.</p>
+												<div class="choose-gifts-main">
+													<div class="choose-gifts">
+														<div class="choose-gifts-img">
+															<div class="btn-group choose-gift-check" data-toggle="buttons">
+																<label class="btn like-check">
+																	<input type="checkbox" autocomplete="off" >
+																</label>
+															</div>
+															<img src="images/gift-img.jpg" alt="..."> </div>
+														<p>Blue Diamond</p>
+														<p><span>345point</span></p>
+													</div>
+												</div>
+											</div>
+											<!--<div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>--> 
+										</div>
+										<!-- /.modal-content --> 
+									</div>
+									<!-- /.modal-dialog --> 
+								</div>
+								<!-- /.modal -->
+								
+								<div class="modal fade" id="choose-payment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header choose-payment-header">
+												<button type="button" class="close close-bg" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+												<h4 class="modal-title">Choose payment</h4>
+											</div>
+											<div class="modal-body game-over pop-gift text-left">
+												<p>Price of this gift is 000 points.<br>
+													You have insufficient point, please charge.<br>
+													<span>The more credits you buy, you can buy much more cheaply.</span> </p>
+												<div class="row">
+													<div class="col-xs-12 col-sm-8">
+														<div class="select-points">
+															<select id="lunch" class="selectpicker form-control" title="Please select a lunch ...">
+																<option>550 point ( +50 point free ) - $25</option>
+																<option>Option 2</option>
+															</select>
+														</div>
+													</div>
+												</div>
+												<div class="refill">
+													<div class="btn-group choose-gift-check" data-toggle="buttons">
+														<label class="btn like-check">
+															<input type="checkbox" autocomplete="off" >
+														</label>
+													</div>
+													Refill my LEZUM Credits automatically when my balance falls below 200 credits.
+													<p><span>If you do not want to enable Auto Refill please uncheck the box</span></p>
+												</div>
+												<div class="payment-options">
+													<div role="tabpanel"> 
+														<!-- Nav tabs -->
+														<ul class="nav nav-tabs payment-tab" role="tablist">
+															<li role="presentation" class="active"><a href="#credit-crd" aria-controls="credit-crd" role="tab" data-toggle="tab"> <img src="images/icon-cards.png" alt="..."> Credit Card</a></li>
+															<li role="presentation"><a href="#paypal-ac" aria-controls="paypal-ac" role="tab" data-toggle="tab"> <img src="images/icon-paypal.png" alt="..."> PayPal Account</a></li>
+															<li role="presentation"><a href="#bill" aria-controls="bill" role="tab" data-toggle="tab"> <img src="images/icon-blank.png" alt="..."> Bill</a></li>
+															<li role="presentation"><a href="#pay-mb" aria-controls="pay-mb" role="tab" data-toggle="tab"> <img src="images/icon-mb.png" alt="..."> Pay by mobile</a></li>
+														</ul>
+														
+														<!-- Tab panes -->
+														<div class="tab-content tab-content-setting">
+															<div role="tabpanel" class="tab-pane active" id="credit-crd">
+																<div class="cards"><img src="images/cards.png" alt="..."> </div>
+																<div class="cards-options">
+																	<div class="row">
+																		<div class="col-xs-3">
+																			<label>Card No.</label>
+																		</div>
+																		<div class="col-xs-9">
+																			<input type="text" class="form-control">
+																		</div>
+																	</div>
+																	<div class="row">
+																		<div class="col-xs-3">
+																			<label>Name</label>
+																		</div>
+																		<div class="col-xs-9">
+																			<input type="text" class="form-control">
+																		</div>
+																	</div>
+																	<div class="row">
+																		<div class="col-xs-3">
+																			<label>Expire Day</label>
+																		</div>
+																		<div class="col-xs-5">
+																			<input type="text" class="form-control">
+																		</div>
+																		<div class="col-xs-4">
+																			<input type="text" class="form-control">
+																		</div>
+																	</div>
+																	<div class="row">
+																		<div class="col-xs-3">
+																			<label>CVC</label>
+																		</div>
+																		<div class="col-xs-3">
+																			<input type="text" class="form-control">
+																		</div>
+																		<div class="col-xs-6">
+																			<p class="back-side-card"><span>Last 3 digits of back side of card</span></p>
+																		</div>
+																	</div>
+																</div>
+																<div class="payment-btm-detial">
+																	<h2><span>$25</span> will be charged to your card.</h2>
+																	<p>
+																	<div class="btn-group choose-gift-check agree-tc" data-toggle="buttons">
+																		<label class="btn like-check tc">
+																			<input type="checkbox" autocomplete="off" >
+																		</label>
+																	</div>
+																	I agree to the Terms and conditions of card payment Service
+																	</p>
+																	<p><a href="javascript:void(0)" class=" term-click">View Terms and Conditions</a></p>
+																</div>
+															</div>
+															<div role="tabpanel" class="tab-pane" id="paypal-ac">
+																<div class="paypal-main">
+																	<div class="payment-btm-detial">
+																		<h2><span>$25</span> has been paid for 550 points to your paypal account<br>
+																			Please check your account</h2>
+																		<p>
+																		<div class="btn-group choose-gift-check agree-tc" data-toggle="buttons">
+																			<label class="btn like-check tc">
+																				<input type="checkbox" autocomplete="off" >
+																			</label>
+																		</div>
+																		I agree to the Terms and conditions of card payment Service
+																		</p>
+																		<p><a href="javascript:void(0)" class="term-click-paypal">View Terms and Conditions</a></p>
+																	</div>
+																	<div class="pay-with-ppal"><a href="javascript:void(0)"><img src="images/pay-with-ppal.png" alt="..."></a></div>
+																</div>
+															</div>
+															<div role="tabpanel" class="tab-pane" id="bill">Bill</div>
+															<div role="tabpanel" class="tab-pane" id="pay-mb">
+																<div class="paypal-main">
+																	<div class="payment-btm-detial">
+																		<h2><span>$25</span> tt</h2>
+																		<p>
+																		<div class="btn-group choose-gift-check agree-tc" data-toggle="buttons">
+																			<label class="btn like-check tc">
+																				<input type="checkbox" autocomplete="off" >
+																			</label>
+																		</div>
+																		I agree to the Terms and conditions of card payment Service
+																		</p>
+																		<p><a href="javascript:void(0)" class="term-click-mobile">View Terms and Conditions</a></p>
+																	</div>
+																	<div class="pay-with-ppal"><a href="javascript:void(0)"><img src="images/pay-with-ppal.png" alt="..."></a></div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="popup-btm-btn proceed-btn">
+														<ul>
+															<li class="pop-send-btn"><a href="javascript:void(0)"  data-target="#cc-proceed" data-toggle="modal" data-dismiss="modal" >Proceed</a></li>
+														</ul>
+													</div>
+												</div>
+											</div>
+											<div class="t-and-c">
+												<div class="term-main">
+													<h3>*PAYMENT BY CREDIT CARD</h3>
+													<p>By clicking the "Pay by card" button, you authorize LEZUM  to charge your Credit card R$ 7.49 for
+														550 credits for use on LEZUM sites and accept the Terms for LEZUM Credits outlined below.<br>
+														Your bank may charge you additional taxes for an international transaction.<br>
+														You can change your payment method or auto-topup settings at any time in payment settings.</p>
+													<h3>*Terms for <span>LEZUM</span> Credits:</h3>
+													<p>1. When you purchase or receive credits, you do not own the credits. Rather, you receive a limited
+														right to use such credits for services on LEZUM such as Spotlight, gifts, etc.<br>
+														2. Purchases of credits are non-refundable.<br>
+														3. Refill works by adding credits to your LEZUM account when it reaches less than 200 credits.
+														You will be recharged with the same amount using the payment method you originally used to
+														buy this service. For example, if you purchased 550 credits and enabled Charge, you will be billed
+														R$ 7.49. You can change your Auto Charge anytime in your payment settings.<br>
+														4. We may change the purchase price for credits at any time as well as the ways that you can use
+														credits. We also reserve the right to stop issuing credits.<br>
+														5. Credits are not redeemable for any sum of money or monetary value from us unless we agree
+														otherwise in writing.<br>
+														6. Unused credits expire after 6 months.<br>
+														7. If you delete your account or if your account is terminated by LEZUM due to breach of the general
+														LEZUM terms and conditions, you will lose any accumulated credits.<br>
+														8. If you receive free or promotional Credits, we may expire them at any time.<br>
+														9. Contactless entry facilitates the entry of your name, card number and expiry date on the LEZUM
+														credit card form by tapping your contactless card to your NFC enabled phone. This does not
+														constitute a payment. To make a payment you need to add your security code (CVV code) from 
+														the back of your card on the form and press the Pay by card button. Your account will be debited 
+														after you have pressed the Pay by card button.<br>
+														10. LEZUM's Credit Card processing complies with all security standards, including PCI DSS and 
+														therefore does not store your card details on our servers.<br>
+														Payments are processed by LEZUM.</p>
+												</div>
+												<div class="term-main-p-pal">
+													<h3>*PAYMENT BY PAYPAL</h3>
+													<p>By clicking the "Pay with PayPal" button, you authorize LEZUM to charge your PayPal account<br>
+														USD$9.99 for 550 credits for use on LEZUM sites and accept the Terms for LEZUM Credits outlined
+														below. Your bank may charge you additional taxes for an international transaction. You can change
+														your payment method or auto-topup settings at any time inpayment settings.</p>
+													<h3>*Terms for <span>LEZUM</span> Credits:</h3>
+													<p>1. When you purchase or receive credits, you do not own the credits. Rather, you receive a limited
+														right to use such credits for services on LEZUM such as Spotlight, gifts, etc.<br>
+														2. Purchases of credits are non-refundable.<br>
+														3. Refill works by adding credits to your LEZUM account when it reaches less than 200 credits.
+														You will be recharged with the same amount using the payment method you originally used to
+														buy this service. For example, if you purchased 550 credits and enabled Charge, you will be billed
+														R$ 7.49. You can change your Auto Charge anytime in your payment settings.<br>
+														4. We may change the purchase price for credits at any time as well as the ways that you can use
+														credits. We also reserve the right to stop issuing credits.<br>
+														5. Credits are not redeemable for any sum of money or monetary value from us unless we agree
+														otherwise in writing.<br>
+														6. Unused credits expire after 6 months.<br>
+														7. If you delete your account or if your account is terminated by LEZUM due to breach of the general
+														LEZUM terms and conditions, you will lose any accumulated credits.<br>
+														8. If you receive free or promotional Credits, we may expire them at any time.<br>
+														9. Contactless entry facilitates the entry of your name, card number and expiry date on the LEZUM
+														credit card form by tapping your contactless card to your NFC enabled phone. This does not
+														constitute a payment. To make a payment you need to add your security code (CVV code) from 
+														the back of your card on the form and press the Pay by card button. Your account will be debited 
+														after you have pressed the Pay by card button.<br>
+														10. LEZUM's Credit Card processing complies with all security standards, including PCI DSS and 
+														therefore does not store your card details on our servers.<br>
+														Payments are processed by LEZUM.</p>
+												</div>
+												<div class="term-main-mb">
+													<h3>*PAYMENT BY MOBILE</h3>
+													<p>By clicking the "Pay with PayPal" button, you authorize LEZUM to charge your PayPal account
+														USD$9.99 for 550 credits for use on LEZUM sites and accept the Terms for LEZUM Credits outlined
+														below. Your bank may charge you additional taxes for an international transaction. You can change
+														your payment method or auto-topup settings at any time inpayment settings.</p>
+													<h3>*Terms for <span>LEZUM</span> Credits:</h3>
+													<p>이곳은 코딩시 입력하시면 됩니다.</p>
+												</div>
+											</div>
+										</div>
+										<!-- /.modal-content --> 
+									</div>
+									<!-- /.modal-dialog --> 
+								</div>
+								<!-- /.modal -->
+								
+								<div class="modal fade" id="cc-proceed" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header choose-payment-header">
+												<button type="button" class="close close-bg" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+												<h4 class="modal-title">Choose payment</h4>
+											</div>
+											<div class="modal-body game-over pop-gift text-left">
+												<div class="payment-options">
+													<div role="tabpanel"> 
+														<!-- Nav tabs -->
+														<ul class="nav nav-tabs payment-tab" role="tablist">
+															<li role="presentation" class="active"><a href="#credit-crd" aria-controls="credit-crd" role="tab" data-toggle="tab"> <img src="images/icon-cards.png" alt="..."> Credit Card</a></li>
+															<li role="presentation"><a href="#paypal-ac" aria-controls="paypal-ac" role="tab" data-toggle="tab"> <img src="images/icon-paypal.png" alt="..."> PayPal Account</a></li>
+															<li role="presentation"><a href="#bill" aria-controls="bill" role="tab" data-toggle="tab"> <img src="images/icon-blank.png" alt="..."> Bill</a></li>
+															<li role="presentation"><a href="#pay-mb" aria-controls="pay-mb" role="tab" data-toggle="tab"> <img src="images/icon-mb.png" alt="..."> Pay by mobile</a></li>
+														</ul>
+														
+														<!-- Tab panes -->
+														<div class="tab-content tab-content-setting">
+															<div role="tabpanel" class="tab-pane active" id="credit-crd">
+																<div class="payment-btm-detial">
+																	<h2><span>$25</span> has been paid for 550 points from your card <br>
+																		Please check your account</h2>
+																</div>
+															</div>
+															<div role="tabpanel" class="tab-pane" id="paypal-ac">PayPal Account</div>
+															<div role="tabpanel" class="tab-pane" id="bill">Bill</div>
+															<div role="tabpanel" class="tab-pane" id="pay-mb">Pay by mobile</div>
+														</div>
+													</div>
+													<div class="popup-btm-btn proceed-btn">
+														<ul>
+															<li class="pop-send-btn"><a href="javascript:void(0)">Proceed</a></li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- /.modal-content --> 
+									</div>
+									<!-- /.modal-dialog --> 
+								</div>
+								<!-- /.modal -->
+								
+								<div class="gift-award">
+									<h1>Award <span>Aug. 25, 2015</span></h1>
+									<div class="gift-award-detail">
+										<ul>
+											<li>
+												<p>MOST LIKED MEMBER</p>
+												<a href="javascript:void(0)">GET AWARDED</a> </li>
+										</ul>
+									</div>
+								</div>
+								<div class="certification">
+									<h1>Certification <span><a href="javascript:void(0)" data-toggle="modal" data-target="#myModal2">More Confirm</a></span></h1>
+									<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close close-bg" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+													<h4 class="modal-title title-setting">Get approved </h4>
+												</div>
+												<div class="modal-body pop-confirmation">
+													<p><span>Lezum</span> does not accept the false profile!<br>
+														Please prove your profile through your profile certification for your actual exist to other members. <br>
+														You can choose any 2 of following options</p>
+													<div class="confirmation-box-main">
+														<div class="confirmation-box">
+															<ul>
+																<li> <img src="images/icon-mobile.png" alt="...">
+																	<h2>Mobile</h2>
+																	<a href="javascript:void(0)" class="approved">approved</a> </li>
+															</ul>
+														</div>
+														<div class="confirmation-box">
+															<ul>
+																<li> <img src="images/icon-fb.png" alt="...">
+																	<h2>Facebook</h2>
+																	<a href="javascript:void(0)">approve</a> </li>
+															</ul>
+														</div>
+														<div class="confirmation-box">
+															<ul>
+																<li> <img src="images/icon-twit.png" alt="...">
+																	<h2>Twitter</h2>
+																	<a href="javascript:void(0)">approve</a> </li>
+															</ul>
+														</div>
+														<div class="confirmation-box">
+															<ul>
+																<li> <img src="images/icon-instagram.png" alt="...">
+																	<h2>Instagram</h2>
+																	<a href="javascript:void(0)">approve</a> </li>
+															</ul>
+														</div>
+														<div class="confirmation-box">
+															<ul>
+																<li> <img src="images/icon-google-plus.png" alt="...">
+																	<h2>Google+</h2>
+																	<a href="javascript:void(0)">approve</a> </li>
+															</ul>
+														</div>
+														<div class="confirmation-box">
+															<ul>
+																<li> <img src="images/icon-linkedin.png" alt="...">
+																	<h2>Linkedln</h2>
+																	<a href="javascript:void(0)">approve</a> </li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- /.modal-content --> 
+										</div>
+										<!-- /.modal-dialog --> 
+									</div>
+									<!-- /.modal -->
+									
+									<div class="certification-detail">
+										<ul>
+											<li class="icon-mb">MOBILE PHONE <span>connect</span></li>
+											<li class="icon-fb">FACEBOOK <span>73idface</span></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="js/jquery.min.js"></script> 
+<script src="js/bootstrap.min.js"></script> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+
+<script src="js/jquery1.6.2.js"></script> 
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script> 
+<!-- the jScrollPane script --> 
+<script type="text/javascript" src="js/jquery.mousewheel.js"></script> 
+<script type="text/javascript" src="js/jquery.contentcarousel.js"></script> 
+<script type="text/javascript">
+			$('#ca-container').contentcarousel();
+			$('#ca-container-1').contentcarousel();
+		</script> 
+<script src="js/jquery-1.11.1.min.js"></script> 
+<script src="js/ion.rangeSlider.js"></script> 
+<script src="js/bootstrap-select.js"></script> 
+<script>
+
+    $(function () {
+
+        $("#range").ionRangeSlider({
+            hide_min_max: true,
+            keyboard: true,
+            min: 0,
+            max: 80,
+            from: 18,
+            to: 80,
+            type: 'double',
+            step: 1,
+            prefix: "",
+            grid: true
+        });
+		$("#single").ionRangeSlider({
+            hide_min_max: true,
+            keyboard: true,
+            min: 0,
+            max: 100,
+            from: 50,
+            //to: 80,
+            type: 'single',
+            step: 1,
+            prefix: "Km",
+            grid: true
+        });
+      
+   
+    });
+	$(function(){ 
+	 $( ".dropdown-menu.bor" ).click(function( event ) {
+        event.stopPropagation();
+     });
+	$('.x, .btn.btn-ook1').click(function(){
+	  $('.dropdown.drop').removeClass('open');	
+	}); 
+	$(".term-click").click(function(){
+	  $(".term-main").toggleClass("dis-b");
+	}); 
+	$(".term-click-paypal").click(function(){
+	  $(".term-main-p-pal").toggleClass("dis-b");
+	});
+	$(".term-click-mobile").click(function(){
+	  $(".term-main-mb").toggleClass("dis-b");
+	});
+	
+   }); 
+</script> 
+<!-- custom scrollbar plugin --> 
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script> 
+<script>
+		(function($){
+			$(window).load(function(){
+				
+				$("#content-7").mCustomScrollbar({
+					scrollButtons:{enable:true},
+					theme:"3d-thick"
+				});
+				
+			});
+		})(jQuery);
+	</script>
+</body>
+</html>

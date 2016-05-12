@@ -1,0 +1,263 @@
+<?php $__env->startSection('content'); ?>
+
+    <div class="row">
+            <div class="span6">
+                <div class="widget widget-nopad">
+                     <!-- widget-header -->
+                    <div class="widget-header">
+                        <i class="icon-list-alt"></i>
+                         <h3> Add Credits Package </h3>
+                    </div>
+
+                    <!-- /widget-header -->
+                      <!-- widget-content -->
+                     <div class="widget-content">
+                       <?php if(Session::has('successpackage')): ?>
+                         <div class="alert alert-success"><?php echo Session::get('successpackage'); ?></div>
+                       <?php endif; ?>
+                        <form action="<?php echo URL::to('admin/credits/addpackage'); ?>" method="post" id="edit-profile" class="form-horizontal">
+                                <br />
+                                <div class="control-group">
+                                    <label class="control-label" for="credits">Credits</label>
+                                    <div class="controls">
+                                        <input type="number" class="span4" id="credits" name="credits" placeholder="">
+                                    </div> <!-- /controls -->
+                                </div> <!-- /control-group -->
+
+                                <div class="control-group">
+                                    <label class="control-label" for="cost">Package Amount</label>
+                                    <div class="controls">
+                                        <input type="number" class="span4" id="cost" name="cost" placeholder="">
+                                    </div> <!-- /controls -->
+                                </div> <!-- /control-group -->
+
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">Create</button>
+                                </div> <!-- /form-actions -->
+
+                                 <?php if(Session::has('errors')): ?>
+                                      <span style="color: red;"> <?php echo $errors->first('credits');; ?> </span><br>
+                                       <span style="color: red;"> <?php echo $errors->first('cost');; ?> </span><br>
+                                 <?php endif; ?>
+                        </form><!-- /form -->
+
+                    </div>  <!-- /widget content -->
+                 </div>
+                 <!-- /widget -->
+            </div>
+            <!-- /span6 -->
+
+                  <div class="span6">
+                            <div class="widget widget-nopad">
+                                 <!-- widget-header -->
+                                <div class="widget-header">
+                                    <i class="icon-list-alt"></i>
+                                     <h3> Credit All Users</h3>
+                                </div>
+                                <!-- /widget-header -->
+                                  <!-- widget-content -->
+                                 <div class="widget-content">
+                                   <?php if(Session::has('creditall')): ?>
+                                     <div class="alert alert-success"><?php echo Session::get('creditall'); ?></div>
+                                   <?php endif; ?>
+
+                                    <form action="<?php echo URL::to('admin/credits/creditall'); ?>" method="post" id="edit-profile" class="form-horizontal">
+                                            <br />
+                                            <div class="control-group">
+                                                <label class="control-label" for="all_users_credit">Credits</label>
+                                                <div class="controls">
+                                                    <input type="number" class="span4" id="all_users_credit" name="all_users_credit" pattern="\d+" min="0" step="1">
+                                                </div> <!-- /controls -->
+                                            </div> <!-- /control-group -->
+
+                                              <div class="control-group">
+                                                <label class="control-label" for="reason">Reason</label>
+                                                <div class="controls">
+                                                    <input type="text" class="span4" id="reason" name="reason" >
+                                                </div> <!-- /controls -->
+                                            </div> <!-- /control-group -->
+
+
+                                            <div class="form-actions">
+                                                <button type="submit" class="btn btn-primary">Send</button>
+                                            </div> <!-- /form-actions -->
+
+                                             <?php if(Session::has('errors')): ?>
+                                                  <span style="color: red;"> <?php echo $errors->first('all_users_credit');; ?> </span>
+                                                  <span style="color: red;"> <?php echo $errors->first('reason');; ?> </span>
+                                             <?php endif; ?>
+
+                                    </form><!-- /form -->
+
+                                </div>  <!-- /widget content -->
+                             </div>
+                             <!-- /widget -->
+                        </div>
+                        <!-- /span6 -->
+
+        </div>
+
+    <div class="row">
+            <div class="span6">
+                <div class="widget widget-nopad">
+                     <!-- widget-header -->
+                    <div class="widget-header">
+                        <i class="icon-list-alt"></i>
+                         <h3>General Settings </h3>
+                    </div>
+
+                    <!-- /widget-header -->
+                      <!-- widget-content -->
+                     <div class="widget-content">
+                       <?php if(Session::has('updategeneral')): ?>
+                         <div class="alert alert-success"><?php echo Session::get('updategeneral'); ?></div>
+                       <?php endif; ?>
+
+
+                        <form action="<?php echo URL::to('admin/credits/updategeneral'); ?>" method="post" id="edit-profile" class="form-horizontal">
+                                <br />
+                                <div class="control-group">
+                                    <label class="control-label" for="defaultcredits">Default Credits</label>
+                                    <div class="controls">
+                                        <input type="number" class="span4" id="defaultcredits" name="defaultcredits" pattern="\d+" min="0" step="1" value="<?php echo $defaultcredits; ?>">
+                                    </div> <!-- /controls -->
+                                </div> <!-- /control-group -->
+
+                                <div class="control-group">
+                                    <label class="control-label" for="isenabled">Credit System</label>
+                                    <div class="controls">
+                                        <select  name="isenabled">
+                                            <option value="1" <?php if($isenabled == '1'): ?>  selected="selected" <?php endif; ?> >Enable</option>
+                                            <option value="0"  <?php if($isenabled == '0'): ?>  selected="selected" <?php endif; ?>>Disable</option>
+                                        </select>
+                                    </div>    
+                                </div> <!-- /control-group -->
+
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">Update</button>
+                                </div> <!-- /form-actions -->
+
+                                 <?php if(Session::has('errors')): ?>
+                                      <span style="color: red;"> <?php echo $errors->first('defaultcredits');; ?> </span><br>
+                                       <span style="color: red;"> <?php echo $errors->first('isenabled');; ?> </span><br>
+                                 <?php endif; ?>
+                        </form><!-- /form -->
+
+                    </div>  <!-- /widget content -->
+                 </div>
+                 <!-- /widget -->
+            </div>
+        </div>    
+
+
+      <div class="row">
+
+
+                <div class="span12">
+
+                    <div class="widget ">
+
+                        <div class="widget-header">
+                            <i class="icon-user"></i>
+                            <h3>Current Credit Packages</h3>
+                        </div> <!-- /widget-header -->
+
+                        <div class="widget-content">
+
+                            <?php if(Session::has('packagedeleted')): ?>
+                                 <div class="alert alert-success"><?php echo Session::get('packagedeleted'); ?></div>
+                            <?php endif; ?>
+
+                            <table class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Credits</th>
+                                            <th>Dollars</th>
+                                            <th style="width:5%">Delete</th>
+
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <?php foreach($packages as $package): ?>
+                                            <tr class="interest-category-tr">
+                                                <td><?php echo $package->credits; ?></td>
+                                                <td><?php echo $package->cost; ?></td>
+                                                <td>
+                                                    <span style="font-size: 10px;" data-id="<?php echo $package->id; ?>"  class="btn btn-danger btn-mini act_sel">Delete</span>
+                                                </td>
+                                            </tr>
+
+                                        <?php endforeach; ?>
+                                    </tbody>
+                                </table>
+                        </div> <!-- /widget-content -->
+
+                    </div> <!-- /widget -->
+
+                </div> <!-- /span -->
+
+              </div> <!-- /row -->
+
+
+<div id="dialog_delete" title="DELETE" class="hide">
+    <p> Are you sure to DELETE this credit package ?</p>
+</div>
+
+<?php $__env->stopSection(); ?>
+
+
+
+<?php $__env->startSection('custom-js'); ?>
+
+
+<script type="text/javascript">
+
+
+$(function() {
+
+     $( "#dialog_delete" ).dialog({
+        resizable: false,
+        autoOpen: false,
+        height: 210,
+        modal: true,
+        buttons: [
+        {
+            'class' : 'btn green',
+            "text" : "Delete",
+            click: function() {
+            var self = this;
+                $.post("<?php echo URL::to('admin/credits/deletepackage/'); ?>",{'id' : $(this).data('id')},function() {
+                    $(self).dialog( "close" );
+                    window.location.reload();
+            });
+            }
+        },
+        {
+            'class' : 'btn',
+            "text" : "Cancel",
+            click: function() {
+                $(this).dialog( "close" );
+            }
+        }]
+    }); 
+
+
+    $(".act_sel").click(function(e){
+
+        var id = $(e.target).data('id');
+        $("#dialog_delete").data('id', id);
+        $( "#dialog_delete" ).dialog( "open" );
+    }) 
+
+ }); 
+
+
+
+</script>
+
+
+
+
+<?php $__env->stopSection(); ?> 
+<?php echo $__env->make('admin.layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

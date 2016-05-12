@@ -1,0 +1,102 @@
+<?php $__env->startSection('content'); ?>
+
+    <div class="row">
+            <div class="span6">
+                <div class="widget widget-nopad">
+                     <!-- widget-header -->
+                    <div class="widget-header">
+                        <i class="icon-list-alt"></i>
+                         <h3> Send Message </h3>
+                    </div>
+                    <!-- /widget-header -->
+                      <!-- widget-content -->
+                     <div class="widget-content">
+                       <?php if(Session::has('success')): ?>
+                         <div class="alert alert-success"><?php echo Session::get('success'); ?></div>
+                       <?php endif; ?>
+                        <form action="<?php echo URL::to('admin/users/sendmsg'); ?>" method="post" id="sendmsg" class="form-horizontal">
+                                <br />
+                                <div class="control-group">
+                                    <label class="control-label" for="msg">Enter Message</label>
+                                    <div class="controls">
+                                        <textarea class="span4" id="msg" name="msg" > </textarea>
+                                    </div> <!-- /controls -->
+                                </div> <!-- /control-group -->
+
+                                <div class="control-group">
+                                    <label class="control-label" for="name">Chat Display Name</label>
+                                    <div class="controls">
+                                        <input type="text" class="span4" class="span4" id="name" name="name" >
+                                    </div> <!-- /controls -->
+                                </div> <!-- /control-group -->
+
+                                <div class="control-group">
+                                    <label class="control-label" for="country">Country</label>
+                                    <div class="controls">
+                                        <?php echo Form::select('country',  $country_list); ?>
+
+                                    </div> <!-- /controls -->
+                                </div> 
+
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">Send</button>
+                                </div> <!-- /form-actions -->
+
+                                 <?php if(Session::has('errors')): ?>
+                                      <span style="color: red;"> <?php echo $errors->first('name');; ?> </span><br>
+                                      <span style="color: red;"> <?php echo $errors->first('msg');; ?> </span><br>
+
+                                 <?php endif; ?>
+                        </form><!-- /form -->
+
+                    </div>  <!-- /widget content -->
+                 </div>
+                 <!-- /widget -->
+            </div>
+            <!-- /span6 -->
+
+
+        </div>
+
+
+       
+<?php $__env->stopSection(); ?>
+
+
+
+
+
+
+
+<?php $__env->startSection('custom-js'); ?>
+<script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=true&libraries=places&language=en"></script>
+<script>
+$(function(){ 
+
+
+
+
+      var input = $("#country").get(0);
+
+      var options = {   types: ['(countries)'] }
+      var autocomplete = new google.maps.places.Autocomplete(input, options);
+ 
+      var input = document.getElementById('country');
+      google.maps.event.addDomListener(input, 'keydown', function(e) { 
+        if (e.keyCode == 13) { 
+            e.preventDefault(); 
+        }
+      }); 
+
+    google.maps.event.addListener(autocomplete, 'place_changed', function() {
+        
+        var place = autocomplete.getPlace();
+
+
+
+        });
+})
+</script>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin.layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

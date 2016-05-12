@@ -1,0 +1,72 @@
+<?php $__env->startSection('content'); ?>
+
+    <div class="row">
+            <div class="span6">
+                <div class="widget widget-nopad">
+                     <!-- widget-header -->
+                    <div class="widget-header">
+                        <i class="icon-list-alt"></i>
+                         <h3> Facebook Settings </h3>
+                    </div>
+                    <!-- /widget-header -->
+                      <!-- widget-content -->
+                     <div class="widget-content">
+                       <?php if(Session::has('successfb')): ?>
+                         <div class="alert alert-success"><?php echo Session::get('successfb'); ?></div>
+                       <?php endif; ?>
+                        <form action="<?php echo URL::to('social/createfacebook'); ?>" method="post" id="edit-profile" class="form-horizontal">
+                                <br />
+                                <div class="control-group">
+                                    <label class="control-label" for="fbid">Facebook App ID</label>
+                                    <div class="controls">
+                                        <input type="text" class="span4" id="fbid" name="fbid" placeholder="Facebook App ID" value="<?php echo $fbid; ?>">
+                                    </div> <!-- /controls -->
+                                </div> <!-- /control-group -->
+
+                                <div class="control-group">
+                                    <label class="control-label" for="fbsecret">Facebook Secret</label>
+                                    <div class="controls">
+                                        <input type="text" class="span4" id="fbsecret" name="fbsecret" placeholder="Facebook Secret" value="<?php echo $fbsecret; ?>" >
+                                    </div> <!-- /controls -->
+                                </div> <!-- /control-group -->
+
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">Save</button>
+                                    <button class="btn">Cancel</button>
+                                </div> <!-- /form-actions -->
+
+                                 <?php if(Session::has('errors')): ?>
+                                      <span style="color: red;"> <?php echo $errors->first('fbid');; ?> </span><br>
+                                      <span style="color: red;"> <?php echo $errors->first('fbsecret');; ?> </span><br>
+                                 <?php endif; ?>
+                        </form><!-- /form -->
+
+                    </div>  <!-- /widget content -->
+                 </div>
+                 <!-- /widget -->
+            </div>
+            <!-- /span6 -->
+
+
+        </div>
+
+
+
+
+
+
+
+<?php $__env->stopSection(); ?>
+
+
+
+
+
+
+
+<?php $__env->startSection('custom-js'); ?>
+
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin.layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

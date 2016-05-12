@@ -1,0 +1,71 @@
+<?php $__env->startSection('css'); ?>
+ <style>
+.pagination li {
+	display: inline;
+margin: 9px;
+text-align: center;
+float: initial;
+font-size: 20px;
+}
+
+.pagination{
+	margin : 15px !important;
+}
+
+#dashboard-users-block {
+	text-align: center;
+}
+
+ </style>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+				<div class="col-sm-9" id="dashboard-users-block">
+					<div class="row">
+						
+					<?php if($users_count == 0): ?>
+					<div class="meeting-game-right-part">
+                            	<div class="alert alert-info no-encounters">
+		                            <strong>There are no people based on your preference! Either change filters or try later</strong> 
+   								</div>
+					</div>			
+					<?php else: ?> 
+						<?php foreach($users as $user): ?>
+							<div class="col-sm-3">
+								<a href="<?php echo URL::to('user/'.$user->id); ?>">
+								<div class="cover-prof">
+									<div class="profile">
+										<?php if($user->photo_id): ?>
+											<img class="img-responsive" src="<?php echo URL::to('/uploads/photos/'.$user->photo_id); ?>" >
+										<?php else: ?>
+											<img class="img-responsive" src="<?php echo URL::to($default_image); ?>" >
+										<?php endif; ?>
+										<div class="tag"> <img src="<?php echo URL::to('/assets/frontend/images/profile-tag.png'); ?>" alt="..."> </div>
+										<div class="right-tags"> <img src="<?php echo URL::to('/assets/frontend/images/log-2.png'); ?>" alt="..."> <img src="<?php echo URL::to('/assets/frontend/images/log-1.png'); ?>" alt="..."> </div>
+										<div class="bottom-bar"> <i class="fa fa-camera cam"></i> 15 
+											<div class="vip-on"> <span class="vip">VIP</span> <span class="on">ON</span> </div>
+										</div>
+									</div>
+									<div class="name-user">
+										<h2><?php echo $user->first_name; ?> ( <?php echo $user->gender; ?> , <?php echo $user->age; ?>)</h2>
+										<div class="upp"><span class="box">Location</span>
+											<p><?php echo $user->city; ?></p>
+										</div>
+										<div class="upp"><span class="box">Ages</span>
+											<p><?php echo $user->preferences()->first()->min_age; ?> ~ <?php echo $user->preferences()->first()->max_age; ?></p>
+										</div>
+									</div>
+								</div>
+								</a>
+							</div>
+						<?php endforeach; ?>
+	
+						</div>
+						<?php echo $users->links(); ?>
+
+					<?php endif; ?>
+
+				</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('frontend.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

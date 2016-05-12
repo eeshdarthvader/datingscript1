@@ -1,0 +1,30 @@
+
+<?php $__env->startSection('content'); ?>
+				<div class="col-sm-9">
+					<div class="row">
+					<?php foreach($users as $user): ?>
+						<div class="col-sm-3">
+							<div class="cover-prof">
+								<div class="profile"> <img src="assets/frontend/images/top2.jpg" alt="...">
+									<div class="tag"> <img src="assets/frontend/images/profile-tag.png" alt="..."> </div>
+									<div class="right-tags"> <img src="assets/frontend/images/log-2.png" alt="..."> <img src="assets/frontend/images/log-1.png" alt="..."> </div>
+									<div class="bottom-bar"> <i class="fa fa-camera cam"></i> 15 <i class="fa fa-video-camera cam"></i> 1
+										<div class="vip-on"> <span class="vip">VIP</span> <span class="on">ON</span> </div>
+									</div>
+								</div>
+								<div class="name-user">
+									<h2><?php echo $user["name"]; ?></h2>
+									<div class="upp"><span class="box">Location</span>
+										<p><?php echo $user["city"]; ?></p>
+									</div>
+									<div class="upp"><span class="box">Ages</span>
+										<p>25~32</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<?php endforeach; ?>
+				</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('frontend.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,85 @@
+<div class="col-sm-3">
+					<div class="user-profile">
+						<div class="pro-dp"> 
+							<?php if($profile_pic): ?>
+								<img src="<?php echo URL::to('/uploads/photos/'.$profile_pic); ?>" alt="...">
+							<?php else: ?>
+								<img class="img-responsive" src="<?php echo URL::to($default_image); ?>">
+
+							<?php endif; ?>
+							<div class="plus-sign" data-target="#imageUpload" data-toggle="modal"> <i class="fa fa-plus pls"></i> </div>
+						</div>
+						<div class="name-info">
+							<h3>My Popularity</h3>
+							<h3 class="white">Level 3-36 Point</h3>
+							<a href="javascript:void(0);">Increase<br>
+							My Populairty</a> </div>
+					</div>
+					<div class="user-profile">
+						<ul>
+							<li><a href="<?php echo URL::to('users/profilevisitors'); ?>">Profile visitors</a> <span class="cover-sp"> <span class="bubble"><?php echo $left_menu_vals['visitor_count']; ?></span><i class="left-caret"></i> </span> <?php if($left_menu_vals['visitor_new'] > 0): ?><span class="new-list-count">+<?php echo $left_menu_vals['visitor_new']; ?></span><?php endif; ?></li>
+							<li><a href="<?php echo URL::to('users/friends'); ?>">My friends</a> <span class="cover-sp"> <span class="bubble"><?php echo $left_menu_vals['friends_count']; ?></span><i class="left-caret"></i> </span> </li>
+							<li><a href="<?php echo URL::to('users/favoriteusers'); ?>">Favorites</a> <span class="cover-sp"> <span class="bubble"><?php echo $left_menu_vals['fav_count']; ?></span><i class="left-caret"></i> </span> </li>
+							<li><a href="<?php echo URL::to('users/interestedusers'); ?>">Interested friends</a> <span class="cover-sp"> <span class="bubble"><?php echo $left_menu_vals['interested_count']; ?></span><i class="left-caret"></i> </span> <?php if($left_menu_vals['interested_new'] > 0): ?><span class="new-list-count">+<?php echo $left_menu_vals['interested_new']; ?></span><?php endif; ?></li>
+							<li><a href="<?php echo URL::to('users/matches'); ?>">Matched members</a> <span class="cover-sp"> <span class="bubble"><?php echo $left_menu_vals['matches_count']; ?></span><i class="left-caret"></i> </span> <?php if($left_menu_vals['matches_new'] > 0): ?><span class="new-list-count">+<?php echo $left_menu_vals['matches_new']; ?></span><?php endif; ?></li>
+							<li><a href="<?php echo URL::to('users/blockedusers'); ?>">Blocked members</a> <span class="cover-sp"> <span class="bubble"><?php echo $left_menu_vals['blocked_count']; ?></span><i class="left-caret"></i> </span> </li>
+							<li><a href="<?php echo URL::to('users/popularity'); ?>">My popularity</a></li>
+							<li><a href="javascript:void(0);">Event</a></li>
+						</ul>
+						<div class="btns-1"> <a href="javascript:void(0);">
+							<div class="dollar-btn">
+								<div class="inner-dollar"></div>
+								<h3>Point Exchange</h3>
+							</div>
+							</a> <a href="javascript:void(0);">
+							<div class="dollar-btn1">
+								<div class="inner-dollar1"></div>
+								<h3>Premium Active</h3>
+							</div>
+							</a> </div>
+					</div>
+				</div>
+				
+				
+				  <div class="modal fade" id="imageUpload" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content container-fluid">
+                <div class="modal-header">
+                    <button type="button" class="close close-bg" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h2 class="modal-title-popularity">
+                        Add photos of yourself
+                        <br />
+                        <small>
+                            Meet new people<br />
+                            in your area today -just upload your pictures...
+                        </small>
+
+                    </h2>
+                    <form id="profile_pic" action="<?php echo URL::to('profile/profilepic'); ?>" method="POST" accept-charset="utf-8" enctype="multipart/form-data">
+
+	                   <?php echo Form::file('file', array("title"=>'Choose a file', "id"=>"file","class"=> "image-upload-cnt")); ?>
+
+                    <button type="submit" class="btn btn-primary btn-block btn-pink btn-upload">Upload from your computer</button>
+                    </form>
+                    <br/>
+                   
+                   
+                </div>
+               
+                <div class="modal-footer-popularity">
+                    <p class="container-fluid">
+                        <small>
+                       
+                            <span style="color:rgb(230, 0, 79)">We accept JPG and PNG file format. The file size limit is 5 mb.</span>
+                        </small>
+                    </p>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    
+    
+				
+				

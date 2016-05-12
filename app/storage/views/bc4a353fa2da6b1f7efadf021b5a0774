@@ -1,0 +1,208 @@
+
+
+
+<?php $__env->startSection('content'); ?>
+
+
+
+  <div class="row">
+
+            <div class="span12">
+
+                <div class="widget ">
+
+                    <div class="widget-header">
+                        <i class="icon-user"></i>
+                        <h3>Unseen Reports</h3>
+                    </div> <!-- /widget-header -->
+
+                    <div class="widget-content">
+
+                        <table id="example" class="display" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>Reporting User</th>
+                                        <th>Reported User</th>
+                                        <th>Reported Photo</th>                                        
+                                        <th style="width:40%" >Reason</th>
+                                        <th style="width:10%">Action</th>
+
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <?php foreach($unseenreports as $reports): ?>
+                                    <tr>
+                                        <td>
+                                        <?php if($reports->reportinguser): ?>
+                                            <a class="hidden-phone" href="<?php echo $reports->reportinguser->profile_url(); ?>">
+                                                <img src="<?php echo $reports->reportinguser->thumbnailPhoto(); ?>" alt="" height="45px" width="45px" />
+                                                <?php echo $reports->reportinguser->first_name; ?>
+
+                                            </a>
+                                        <?php else: ?>
+                                            deleted user
+                                        <?php endif; ?>
+                                        </td>
+
+
+                                        <td>
+                                        <?php if($reports->reporteduser): ?>
+                                               <a class="hidden-phone" href="<?php echo $reports->reporteduser->profile_url(); ?>">
+                                                   <img src="<?php echo $reports->reporteduser->thumbnailPhoto(); ?>" alt="" height="45px" width="45px" />
+                                                   <?php echo $reports->reporteduser->first_name; ?>
+
+                                               </a>
+                                        <?php else: ?>
+                                               deleted user
+                                        <?php endif; ?>
+                                        </td>
+
+                                       <td>
+	                                        <img class="img-responsive" src="<?php echo URL::to('uploads/photos/'.$reports->photo_url); ?>" alt="" height="45px" width="45px" />
+                                        </td>
+
+                                       <td>
+	                                       <?php if($reports->reason == 'inappropriate_photo'): ?>
+	                                       		Inappropriate Photo
+	                                       <?php elseif($reports->reason == 'celebrity_photo'): ?>
+	                                       		Celebrity Photo
+	                                       <?php else: ?> 
+	                                       		Others
+	                                       <?php endif; ?>		
+	                                    </td>                                        
+	                                    <td>
+                                        <a href="<?php echo URL::to('admin/abuse/mark-photo-seen/'.$reports->id); ?>"  onclick="return confirm('Are you sure you want to mark this as a Seen Report ?')" style="font-size: 10px;"  type="submit" class="btn btn-info btn-mini">Mark Seen</a>
+                                        </td>
+
+                                    </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+
+
+                    </div> <!-- /widget-content -->
+
+                </div> <!-- /widget -->
+
+            </div> <!-- /span8 -->
+
+          </div> <!-- /row -->
+
+
+ <div class="row">
+
+            <div class="span12">
+
+                <div class="widget ">
+
+                    <div class="widget-header">
+                        <i class="icon-user"></i>
+                        <h3>Seen Reports</h3>
+                    </div> <!-- /widget-header -->
+
+                    <div class="widget-content">
+
+                        <table id="example2" class="display" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>Reporting User</th>
+                                        <th>Reported User</th>
+                                        <th>Reported Photo</th>
+										<th style="width:40%" >Reason</th>
+                                        <th style="width:10%">Action</th>
+
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <?php foreach($seenreports as $reports): ?>
+                                    <tr>
+                                        <td>
+                                        <?php if($reports->reportinguser): ?>
+                                            <a class="hidden-phone" href="<?php echo $reports->reportinguser->profile_url(); ?>">
+                                                <img src="<?php echo $reports->reportinguser->thumbnailPhoto(); ?>" alt="" height="45px" width="45px" />
+                                                <?php echo $reports->reportinguser->first_name; ?>
+
+                                            </a>
+                                        <?php else: ?>
+                                            deleted user
+                                        <?php endif; ?>
+                                        </td>
+
+
+                                        <td>
+                                        <?php if($reports->reporteduser): ?>
+                                               <a class="hidden-phone" href="<?php echo $reports->reporteduser->profile_url(); ?>">
+                                                   <img src="<?php echo $reports->reporteduser->thumbnailPhoto(); ?>" alt="" height="45px" width="45px" />
+                                                   <?php echo $reports->reporteduser->first_name; ?>
+
+                                               </a>
+                                        <?php else: ?>
+                                               deleted user
+                                        <?php endif; ?>
+                                        </td>
+                                        
+                                        <td>
+	                                        <img class="img-responsive" src="<?php echo URL::to('uploads/photos/'.$reports->photo_url); ?>" alt="" height="45px" width="45px" />
+                                        </td>
+
+                                       <td>
+	                                       <?php if($reports->reason == 'inappropriate_photo'): ?>
+	                                       		Inappropriate Photo
+	                                       <?php elseif($reports->reason == 'celebrity_photo'): ?>
+	                                       		Celebrity Photo
+	                                       <?php else: ?> 
+	                                       		Others
+	                                       <?php endif; ?>		
+	                                    </td>
+                                        <td>
+                                        <a href="<?php echo URL::to('admin/abuse/mark-photo-unseen/'.$reports->id); ?>" onclick="return confirm('Are you sure you want to mark this as an Unseen Report ?')" style="font-size: 10px;"  type="submit" class="btn btn-info btn-mini">Mark Unseen</a>
+                                        </td>
+
+                                    </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+
+
+                    </div> <!-- /widget-content -->
+
+                </div> <!-- /widget -->
+
+            </div> <!-- /span8 -->
+
+          </div> <!-- /row -->
+
+
+
+
+
+
+
+
+<?php $__env->stopSection(); ?>
+
+
+
+
+<?php $__env->startSection('custom-js'); ?>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+    $('#example').DataTable()
+
+});
+
+$(document).ready(function() {
+    $('#example2').DataTable()
+
+});
+
+</script>
+
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin.layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,112 @@
+
+
+<?php $__env->startSection('content'); ?>
+
+	<div class="col-sm-9">
+		<div class="block-page">
+			<div class="block-cont">
+				<h1>My popularity</h1>
+				<br/>							
+				<br/>
+				<h1>Check who sent you gifts.</h1>
+						
+				<h3>
+					<small>There are 4 members who sent you gifts.<br/>With these gifts, your points will increased with</small<br/>
+								calculating value of gifts. Your points can be exchanged with <br/>cash in Point exchange menu.
+					</small>
+				</h3>
+														
+				<br/>							
+				
+				<?php for($i=0;$i<5;$i++): ?>
+					<div class="row custom1">
+						<div class="col-xs-12">
+							<div class="user-3">
+											
+								<div class="row">
+									<div class="col-sm-5">
+										<div class="user-2"> <img src="<?php echo URL::to('assets/frontend/images/block-img-1.png'); ?>" alt="...">
+											<div class="user-m">
+												<h4>Anny Kim (F, 29)</h4>
+												<div class="vip-on1">
+													<span class="vip">VIP</span>
+													<span class="on">ON</span>
+													<span class="new">NEW</span>
+													<span class="mob">MOBILE</span>
+												</div>
+												<p>est qui dolorem <br> Dolor isset ipsum est qui</p>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-7">
+										<div class="log-1">
+											<ul>
+												<li class="profile-list-li">
+													<a href="javascript:void(0);">
+														<img src="<?php echo URL::to('assets/frontend/images/people-1.png'); ?>" alt="...">
+														Chat
+													</a>
+												</li>
+												<li class="profile-list-li">
+													<a href="javascript:void(0);">
+														<img src="<?php echo URL::to('assets/frontend/images/people-2.png'); ?>" alt="...">
+														Add to favorites
+													</a>
+												</li>
+												<li class="profile-list-li">
+													<a href="javascript:void(0);">
+														<img src="<?php echo URL::to('assets/frontend/images/people-del.png'); ?>" alt="...">
+														Delete
+													</a>
+												</li>
+												<li class="profile-list-li">
+													<a href="javascript:void(0);">
+														<img src="<?php echo URL::to('assets/frontend/images/people-gift.png'); ?>" alt="...">
+														Give a gift
+													</a>
+												</li>
+												<li class="profile-list-li">
+													<a href="javascript:void(0);">
+														<img src="<?php echo URL::to('assets/frontend/images/people-mouse.png'); ?>" alt="...">
+														Report Abuse
+													</a>
+												</li>
+												<li class="profile-list-li">
+													<a href="javascript:void(0);">
+														<img src="<?php echo URL::to('assets/frontend/images/people-block.png'); ?>" alt="...">
+														Block
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					
+						<div class="col-xs-12 gifts-cnt">
+							<div>
+								<div class="row">
+									<div class="col-xs-2">
+										<img src="<?php echo URL::to('assets/frontend/images/gift-img.jpg'); ?>"  alt="..."> 		
+									</div>	
+									<div class="col-xs-2">
+										<img src="<?php echo URL::to('assets/frontend/images/gift-img.jpg'); ?>"  alt="..."> 		
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				<?php endfor; ?>	
+			</div>
+
+
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('scripts'); ?>
+
+<?php echo $__env->make('frontend.list_script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('frontend.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

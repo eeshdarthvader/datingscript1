@@ -1,0 +1,68 @@
+<?php $__env->startSection('content'); ?>
+
+    <div class="row">
+
+        <div class="span12">
+
+            <div class="widget ">
+
+                <div class="widget-header">
+                    <h3>Vocabulary</h3>
+                </div> <!-- /widget-header -->
+
+                <div class="widget-content">
+
+                    <?php if(Session::has('success')): ?>
+                        <div class="alert alert-success"><?php echo Session::get('success'); ?></div>
+                    <?php endif; ?>
+
+                    <?php if(!$is_writable): ?>
+						<div class="alert alert-error">
+								<?php echo $lang_path; ?> is not writable. Please make it writable. <button class="btn yellow btn-small" onclick="window.location.reload();">Check Again</button>
+						</div>
+					<?php endif; ?>
+
+					<form action="<?php echo URL::to('/multilanguage/editlanguage'); ?>" id="form-general" class="form-horizontal" method="post">
+						<input type="hidden" name="l" value="<?php echo $l; ?>" />
+
+						<table class="table table-striped table-bordered">
+							<tbody>
+								<?php foreach($language as $l): ?>
+									<tr>
+										<td><?php echo $l->left_lang; ?></td>
+										<td>
+											<?php if(!$is_writable): ?>
+												<textarea name="<?php echo $l->mcode; ?>"  disabled><?php echo $l->right_lang; ?></textarea>
+		
+											<?php else: ?>
+												<textarea name="<?php echo $l->mcode; ?>"><?php echo $l->right_lang; ?></textarea>
+											<?php endif; ?>
+										</td>
+									</tr>
+								<?php endforeach; ?>
+											
+							</tbody>
+						</table>
+
+						<div class="form-actions">
+							<?php if(!$is_writable): ?>
+								<button type="submit" class="btn green" disabled>Update</button>
+							<?php else: ?>
+								<button type="submit" class="btn green">Update</button>	
+							<?php endif; ?>
+						
+						</div>
+					</form>
+                   
+                </div> <!-- /widget-content -->
+
+            </div> <!-- /widget -->
+
+        </div> <!-- /span -->
+
+    </div> <!-- /row -->
+
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('admin.layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

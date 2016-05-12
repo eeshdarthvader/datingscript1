@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LEZUM</title>
+
+<!-- Bootstrap -->
+
+{{ HTML::style('assets/frontend/css/bootstrap.min.css') }} 
+{{ HTML::style('assets/frontend/css/style.css') }} 
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+{{ HTML::style('assets/frontend/css/demo.css') }} 
+{{ HTML::style('assets/frontend/css/jquery.jscrollpane.css') }}
+{{ HTML::style('assets/frontend/css/ion.rangeSlider.css') }}
+{{ HTML::style('assets/frontend/css/ion.rangeSlider.skinFlat.css') }}
+{{ HTML::style('assets/frontend/css/jquery-ui.min.css') }}
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<link rel="shortcut icon" href="favicon.ico"/>
+@yield('css')
+</head>
+
+<body ng-app="App">
+<div class="wrap">
+<!-- BEGIN HEADER -->
+@include('frontend.header')
+<!-- END HEADER -->
+@include('frontend.data')
+@include('frontend.spotlight')
+@include('frontend.navbar')
+<div class="profiles">
+		<div class="container">
+			<div class="row">
+			@include('frontend.menu')
+			@yield('content')
+		</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade" id="choosepayment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            
+            <div class="modal-content">
+                <div class="modal-header choose-payment-header">
+                    <button class="close close-bg" data-dismiss="modal" type=
+                    "button"><span>×</span></button>
+
+                    <h4 class="modal-title">Choose payment</h4>
+                </div>
+
+                <div class="modal-body game-over pop-gift text-left">
+                    <p>Price of this gift is 000 points.<br>
+                    You have insufficient point, please charge.<br>
+                    <span>The more credits you buy, you can buy much more
+                    cheaply.</span></p>
+
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-8">
+                            <div class="select-points">
+                                <select class="selectpicker form-control" id=
+                                "lunch"  title=
+                                "Please select a lunch ...">
+                                    <option>
+                                        550 point ( +50 point free ) - $25
+                                    </option>
+
+                                    <option>
+                                        Option 2
+                                    </option>
+                                </select>
+
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="refill">
+                        <div class="btn-group choose-gift-check" data-toggle=
+                        "buttons">
+                            <label class="btn like-check"><input autocomplete=
+                            "off" type="checkbox"></label>
+                        </div>Refill my LEZUM Credits automatically when my
+                        balance falls below 200 credits.
+
+                        <p><span>If you do not want to enable Auto Refill
+                        please uncheck the box</span></p>
+                    </div>
+
+                    <div class="payment-options">
+                        <div>
+                            <!-- Nav tabs -->
+
+                            <ul class="nav nav-tabs payment-tab">
+                                <li class="active">
+                                    <a data-toggle="tab" href=
+                                    "#credit-crd"><img alt="..." src="{{URL::to('assets/frontend/images/icon-cards.png')}}"> Credit Card</a>
+                                </li>
+
+                                <li>
+                                    <a data-toggle="tab" href=
+                                    "#paypal-ac"><img alt="..." src=
+                                     "{{URL::to('assets/frontend/images/icon-paypal.png')}}"> PayPal
+                                    Account</a>
+                                </li>
+
+                                <li>
+                                    <a data-toggle="tab" href="#bill"><img alt=
+                                    "..." src="{{URL::to('assets/frontend/images/icon-blank.png')}}"> Bill</a>
+                                </li>
+
+                                <li>
+                                    <a data-toggle="tab" href=
+                                    "#pay-mb"><img alt="..." src=
+                                     "{{URL::to('assets/frontend/images/icon-mb.png')}}"> Pay by mobile</a>
+                                </li>
+                            </ul><!-- Tab panes -->
+
+                            <div class="tab-content tab-content-setting">
+                                <div class="tab-pane active" id="credit-crd">
+                                    <div class="cards"><img alt="..." src=
+                                     "{{URL::to('assets/frontend/images/cards.png')}}"></div>
+
+                                    <div class="cards-options">
+                                        <div class="row">
+                                            <div class="col-xs-3">
+                                                <label>Card No.</label>
+                                            </div>
+
+                                            <div class="col-xs-9">
+                                                <input class="form-control"
+                                                type="text">
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-xs-3">
+                                                <label>Name</label>
+                                            </div>
+
+                                            <div class="col-xs-9">
+                                                <input class="form-control"
+                                                type="text">
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-xs-3">
+                                                <label>Expire Day</label>
+                                            </div>
+
+                                            <div class="col-xs-5">
+                                                <input class="form-control"
+                                                type="text">
+                                            </div>
+
+                                            <div class="col-xs-4">
+                                                <input class="form-control"
+                                                type="text">
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-xs-3">
+                                                <label>CVC</label>
+                                            </div>
+
+                                            <div class="col-xs-3">
+                                                <input class="form-control"
+                                                type="text">
+                                            </div>
+
+                                            <div class="col-xs-6">
+                                                <p class="back-side-card">
+                                                <span>Last 3 digits of back
+                                                side of card</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="payment-btm-detial">
+                                        <h2><span>$25</span> will be charged to
+                                        your card.</h2>
+
+                                        <p></p>
+
+                                        <div class=
+                                        "btn-group choose-gift-check agree-tc"
+                                        data-toggle="buttons">
+                                            <label class=
+                                            "btn like-check tc"><input autocomplete="off"
+                                            type="checkbox"></label>
+                                        </div>I agree to the Terms and
+                                        conditions of card payment Service
+
+                                        <p></p>
+
+                                        <p><a class=" term-click" href=
+                                        "javascript:void(0)">View Terms and
+                                        Conditions</a></p>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane" id="paypal-ac">
+                                    <div class="paypal-main">
+                                        <div class="payment-btm-detial">
+                                            <h2><span>$25</span> has been paid
+                                            for 550 points to your paypal
+                                            account<br>
+                                            Please check your account</h2>
+
+                                            <p></p>
+
+                                            <div class=
+                                            "btn-group choose-gift-check agree-tc"
+                                            data-toggle="buttons">
+                                                <label class=
+                                                "btn like-check tc"><input autocomplete="off"
+                                                type="checkbox"></label>
+                                            </div>I agree to the Terms and
+                                            conditions of card payment Service
+
+                                            <p></p>
+
+                                            <p><a class="term-click-paypal"
+                                            href="javascript:void(0)">View
+                                            Terms and Conditions</a></p>
+                                        </div>
+
+                                        <div class="pay-with-ppal">
+                                            <a href=
+                                            "javascript:void(0)"><img alt="..."
+                                            src= "{{URL::to('assets/frontend/images/pay-with-ppal.png')}}"></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane" id="bill">
+                                    Bill
+                                </div>
+
+                                <div class="tab-pane" id="pay-mb">
+                                    <div class="paypal-main">
+                                        <div class="payment-btm-detial">
+                                            <h2><span>$25</span> tt</h2>
+
+                                            <p></p>
+
+                                            <div class=
+                                            "btn-group choose-gift-check agree-tc"
+                                            data-toggle="buttons">
+                                                <label class=
+                                                "btn like-check tc"><input autocomplete="off"
+                                                type="checkbox"></label>
+                                            </div>I agree to the Terms and
+                                            conditions of card payment Service
+
+                                            <p></p>
+
+                                            <p><a class="term-click-mobile"
+                                            href="javascript:void(0)">View
+                                            Terms and Conditions</a></p>
+                                        </div>
+
+                                        <div class="pay-with-ppal">
+                                            <a href=
+                                            "javascript:void(0)"><img alt="..."
+                                            src="{{URL::to('assets/frontend/images/pay-with-ppal.png')}}"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="popup-btm-btn proceed-btn">
+                            <ul>
+                                <li class="pop-send-btn">
+                                    <a data-dismiss="modal" data-target=
+                                    "#cc-proceed" data-toggle="modal" href=
+                                    "javascript:void(0)">Proceed</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="t-and-c">
+                    <div class="term-main">
+                        <h3>*PAYMENT BY CREDIT CARD</h3>
+
+                        <p>By clicking the "Pay by card" button, you authorize
+                        LEZUM to charge your Credit card R$ 7.49 for 550
+                        credits for use on LEZUM sites and accept the Terms for
+                        LEZUM Credits outlined below.<br>
+                        Your bank may charge you additional taxes for an
+                        international transaction.<br>
+                        You can change your payment method or auto-topup
+                        settings at any time in payment settings.</p>
+
+                        <h3>*Terms for <span>LEZUM</span> Credits:</h3>
+
+                        <p>1. When you purchase or receive credits, you do not
+                        own the credits. Rather, you receive a limited right to
+                        use such credits for services on LEZUM such as
+                        Spotlight, gifts, etc.<br>
+                        2. Purchases of credits are non-refundable.<br>
+                        3. Refill works by adding credits to your LEZUM account
+                        when it reaches less than 200 credits. You will be
+                        recharged with the same amount using the payment method
+                        you originally used to buy this service. For example,
+                        if you purchased 550 credits and enabled Charge, you
+                        will be billed R$ 7.49. You can change your Auto Charge
+                        anytime in your payment settings.<br>
+                        4. We may change the purchase price for credits at any
+                        time as well as the ways that you can use credits. We
+                        also reserve the right to stop issuing credits.<br>
+                        5. Credits are not redeemable for any sum of money or
+                        monetary value from us unless we agree otherwise in
+                        writing.<br>
+                        6. Unused credits expire after 6 months.<br>
+                        7. If you delete your account or if your account is
+                        terminated by LEZUM due to breach of the general LEZUM
+                        terms and conditions, you will lose any accumulated
+                        credits.<br>
+                        8. If you receive free or promotional Credits, we may
+                        expire them at any time.<br>
+                        9. Contactless entry facilitates the entry of your
+                        name, card number and expiry date on the LEZUM credit
+                        card form by tapping your contactless card to your NFC
+                        enabled phone. This does not constitute a payment. To
+                        make a payment you need to add your security code (CVV
+                        code) from the back of your card on the form and press
+                        the Pay by card button. Your account will be debited
+                        after you have pressed the Pay by card button.<br>
+                        10. LEZUM's Credit Card processing complies with all
+                        security standards, including PCI DSS and therefore
+                        does not store your card details on our servers.<br>
+                        Payments are processed by LEZUM.</p>
+                    </div>
+
+                    <div class="term-main-p-pal">
+                        <h3>*PAYMENT BY PAYPAL</h3>
+
+                        <p>By clicking the "Pay with PayPal" button, you
+                        authorize LEZUM to charge your PayPal account<br>
+                        USD$9.99 for 550 credits for use on LEZUM sites and
+                        accept the Terms for LEZUM Credits outlined below. Your
+                        bank may charge you additional taxes for an
+                        international transaction. You can change your payment
+                        method or auto-topup settings at any time inpayment
+                        settings.</p>
+
+                        <h3>*Terms for <span>LEZUM</span> Credits:</h3>
+
+                        <p>1. When you purchase or receive credits, you do not
+                        own the credits. Rather, you receive a limited right to
+                        use such credits for services on LEZUM such as
+                        Spotlight, gifts, etc.<br>
+                        2. Purchases of credits are non-refundable.<br>
+                        3. Refill works by adding credits to your LEZUM account
+                        when it reaches less than 200 credits. You will be
+                        recharged with the same amount using the payment method
+                        you originally used to buy this service. For example,
+                        if you purchased 550 credits and enabled Charge, you
+                        will be billed R$ 7.49. You can change your Auto Charge
+                        anytime in your payment settings.<br>
+                        4. We may change the purchase price for credits at any
+                        time as well as the ways that you can use credits. We
+                        also reserve the right to stop issuing credits.<br>
+                        5. Credits are not redeemable for any sum of money or
+                        monetary value from us unless we agree otherwise in
+                        writing.<br>
+                        6. Unused credits expire after 6 months.<br>
+                        7. If you delete your account or if your account is
+                        terminated by LEZUM due to breach of the general LEZUM
+                        terms and conditions, you will lose any accumulated
+                        credits.<br>
+                        8. If you receive free or promotional Credits, we may
+                        expire them at any time.<br>
+                        9. Contactless entry facilitates the entry of your
+                        name, card number and expiry date on the LEZUM credit
+                        card form by tapping your contactless card to your NFC
+                        enabled phone. This does not constitute a payment. To
+                        make a payment you need to add your security code (CVV
+                        code) from the back of your card on the form and press
+                        the Pay by card button. Your account will be debited
+                        after you have pressed the Pay by card button.<br>
+                        10. LEZUM's Credit Card processing complies with all
+                        security standards, including PCI DSS and therefore
+                        does not store your card details on our servers.<br>
+                        Payments are processed by LEZUM.</p>
+                    </div>
+
+                    <div class="term-main-mb">
+                        <h3>*PAYMENT BY MOBILE</h3>
+
+                        <p>By clicking the "Pay with PayPal" button, you
+                        authorize LEZUM to charge your PayPal account USD$9.99
+                        for 550 credits for use on LEZUM sites and accept the
+                        Terms for LEZUM Credits outlined below. Your bank may
+                        charge you additional taxes for an international
+                        transaction. You can change your payment method or
+                        auto-topup settings at any time inpayment settings.</p>
+
+                        <h3>*Terms for <span>LEZUM</span> Credits:</h3>
+
+                        <p>이곳은 코딩시 입력하시면 됩니다.</p>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+<div class="modal fade" id="pop-gift-main" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header pop-personal1">
+												<button type="button" class="close close-bg" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+											</div>
+											<div class="modal-body game-over pop-gift">
+												<h3>Express your interest sending gift.</h3>
+												<p>Gifts are a great way to reach others with good impression.<br>
+													Members receiving your gift will be to express gratitude to you <br>
+													<span>Received a lot of gifts members are more likely to win a popularity contest. Send a gift to a member that you like.</span></p>
+												<div class="gift-credit">
+													<ul>
+														<li>My Credit</li>
+														<li><span>170,000 POINT</span></li>
+													</ul>
+												</div>
+												<div role="tabpanel"> 
+													
+													<!-- Nav tabs -->
+													<ul class="nav nav-tabs gift-to" role="tablist">
+														<li role="presentation" class="active"><a href="#female-mem" aria-controls="female-mem" role="tab" data-toggle="tab">Gift to female members</a></li>
+														<li role="presentation"><a href="#male-mem" aria-controls="male-mem" role="tab" data-toggle="tab">Gift to male members</a></li>
+													</ul>
+													
+													<!-- Tab panes -->
+													<div class="tab-content">
+														<div role="tabpanel" class="tab-pane active" id="female-mem">
+															<div class="choose-gifts-main">
+																<div class="choose-gifts">
+																	<div class="choose-gifts-img">
+																		<div class="btn-group choose-gift-check" data-toggle="buttons">
+																			<label class="btn like-check">
+																				<input type="checkbox" autocomplete="off" >
+																			</label>
+																		</div>
+																		<img src="{{URL::to('assets/frontend/images/gift-img.jpg')}}" alt="..."> </div>
+																	<p>Blue Diamond</p>
+																	<p><span>345point</span></p>
+																</div>
+																<div class="choose-gifts">
+																	<div class="choose-gifts-img">
+																		<div class="btn-group choose-gift-check" data-toggle="buttons">
+																			<label class="btn like-check">
+																				<input type="checkbox" autocomplete="off" >
+																			</label>
+																		</div>
+																		<img src="{{URL::to('assets/frontend/images/gift-img.jpg')}}" alt="..."> </div>
+																	<p>Blue Diamond</p>
+																	<p><span>345point</span></p>
+																</div>
+
+<div class="choose-gifts">
+																	<div class="choose-gifts-img">
+																		<div class="btn-group choose-gift-check" data-toggle="buttons">
+																			<label class="btn like-check">
+																				<input type="checkbox" autocomplete="off" >
+																			</label>
+																		</div>
+																		<img src="{{URL::to('assets/frontend/images/gift-img.jpg')}}" alt="..."> </div>
+																	<p>Blue Diamond</p>
+																	<p><span>345point</span></p>
+																</div>
+
+<div class="choose-gifts">
+																	<div class="choose-gifts-img">
+																		<div class="btn-group choose-gift-check" data-toggle="buttons">
+																			<label class="btn like-check">
+																				<input type="checkbox" autocomplete="off" >
+																			</label>
+																		</div>
+																		<img src="{{URL::to('assets/frontend/images/gift-img.jpg')}}" alt="..."> </div>
+																	<p>Blue Diamond</p>
+																	<p><span>345point</span></p>
+																</div>
+
+<div class="choose-gifts">
+																	<div class="choose-gifts-img">
+																		<div class="btn-group choose-gift-check" data-toggle="buttons">
+																			<label class="btn like-check">
+																				<input type="checkbox" autocomplete="off" >
+																			</label>
+																		</div>
+																		<img src="{{URL::to('assets/frontend/images/gift-img.jpg')}}" alt="..."> </div>
+																	<p>Blue Diamond</p>
+																	<p><span>345point</span></p>
+																</div>
+
+<div class="choose-gifts">
+																	<div class="choose-gifts-img">
+																		<div class="btn-group choose-gift-check" data-toggle="buttons">
+																			<label class="btn like-check">
+																				<input type="checkbox" autocomplete="off" >
+																			</label>
+																		</div>
+																		<img src="{{URL::to('assets/frontend/images/gift-img.jpg')}}" alt="..."> </div>
+																	<p>Blue Diamond</p>
+																	<p><span>345point</span></p>
+																</div>
+
+																<div class="choose-gifts">
+																	<div class="choose-gifts-img">
+																		<div class="btn-group choose-gift-check" data-toggle="buttons">
+																			<label class="btn like-check">
+																				<input type="checkbox" autocomplete="off" >
+																			</label>
+																		</div>
+																		<img src="{{URL::to('assets/frontend/images/gift-img.jpg')}}"  alt="..."> </div>
+																	<p>Blue Diamond</p>
+																	<p><span>345point</span></p>
+																</div>
+																<div class="choose-gifts">
+																	<div class="choose-gifts-img">
+																		<div class="btn-group choose-gift-check" data-toggle="buttons">
+																			<label class="btn like-check">
+																				<input type="checkbox" autocomplete="off" >
+																			</label>
+																		</div>
+																		<img src="{{URL::to('assets/frontend/images/gift-img.jpg')}}"  alt="..."> </div>
+																	<p>Blue Diamond</p>
+																	<p><span>345point</span></p>
+																</div>
+																<div class="choose-gifts">
+																	<div class="choose-gifts-img">
+																		<div class="btn-group choose-gift-check" data-toggle="buttons">
+																			<label class="btn like-check">
+																				<input type="checkbox" autocomplete="off" >
+																			</label>
+																		</div>
+																		<img src="{{URL::to('assets/frontend/images/gift-img.jpg')}}"  alt="..."> </div>
+																	<p>Blue Diamond</p>
+																	<p><span>345point</span></p>
+																</div>
+															</div>
+														</div>
+														<div role="tabpanel" class="tab-pane" id="male-mem">
+															<div class="choose-gifts-main">
+																<div class="choose-gifts">
+																	<div class="choose-gifts-img">
+																		<div class="btn-group choose-gift-check" data-toggle="buttons">
+																			<label class="btn like-check">
+																				<input type="checkbox" autocomplete="off" >
+																			</label>
+																		</div>
+																		<img src="{{URL::to('assets/frontend/images/gift-img.jpg')}}"  alt="..."> </div>
+																	<p>Blue Diamond</p>
+																	<p><span>345point</span></p>
+																</div>
+																<div class="choose-gifts">
+																	<div class="choose-gifts-img">
+																		<div class="btn-group choose-gift-check" data-toggle="buttons">
+																			<label class="btn like-check">
+																				<input type="checkbox" autocomplete="off" >
+																			</label>
+																		</div>
+																		<img src="{{URL::to('assets/frontend/images/gift-img.jpg')}}"  alt="..."> </div>
+																	<p>Blue Diamond</p>
+																	<p><span>345point</span></p>
+																</div>
+																<div class="choose-gifts">
+																	<div class="choose-gifts-img">
+																		<div class="btn-group choose-gift-check" data-toggle="buttons">
+																			<label class="btn like-check">
+																				<input type="checkbox" autocomplete="off" >
+																			</label>
+																		</div>
+																		<img src="{{URL::to('assets/frontend/images/gift-img.jpg')}}"  alt="..."> </div>
+																	<p>Blue Diamond</p>
+																	<p><span>345point</span></p>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="comment-with-gift">
+													<label>Write comments with gift</label>
+													<input type="text" class="form-control" >
+												</div>
+												<div class="popup-btm-btn pop-personal-btn">
+													<ul>
+														<li class="pop-send-btn"><a href="javascript:void(0)"  data-dismiss="modal" data-toggle="modal" data-target="#sent-a-gift">Proceed</a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+										<!-- /.modal-content --> 
+									</div>
+									<!-- /.modal-dialog --> 
+								</div>
+								<!-- /.modal -->
+ 
+
+@include('frontend.footer')
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+{{ HTML::script('assets/frontend/js/jquery.min.js') }}
+{{ HTML::script('assets/frontend/js/angular.min.js') }}
+
+
+{{ HTML::script('assets/frontend/js/bootstrap.min.js') }} 
+<script>
+ var base_url="{{URL::to('/')}}";
+</script>
+
+
+
+
+{{ HTML::script('assets/frontend/js/app.js') }} 
+
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+
+{{ HTML::script('assets/frontend/js/jquery.easing.1.3.js') }}
+<!-- the jScrollPane script --> 
+{{ HTML::script('assets/frontend/js/jquery.mousewheel.js') }}
+
+
+{{ HTML::script('assets/frontend/js/jquery.contentcarousel.js') }}
+<script type="text/javascript">
+	//var $jq162 = jQuery.noConflict(true);
+			$('#ca-container').contentcarousel();
+			$('#ca-container-1').contentcarousel();
+		</script>
+{{ HTML::script('assets/frontend/js/ion.rangeSlider.js') }}
+
+{{ HTML::script('assets/frontend/js/jquery-ui.min.js') }}
+<script type="text/javascript">
+	    $('.btn-upload').click(function(e){
+            if($('#file').val()=="")
+            {
+	            e.preventDefault();
+	            alert('Please upload image !');
+	            return false;
+            }
+        });
+        
+       
+                
+</script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
+<script>
+    $(function () {
+
+        $("#range").ionRangeSlider({
+            hide_min_max: true,
+            keyboard: true,
+            min: 0,
+            max: 80,
+            from: "{{$pref_min_age}}",
+            to: "{{$pref_max_age}}",
+            type: 'double',
+            step: 1,
+            prefix: "",
+            grid: true
+        });
+		$("#single").ionRangeSlider({
+            hide_min_max: true,
+            keyboard: true,
+            min: 0,
+            max: 100,
+            from: "{{$pref_dist}}",
+            //to: 80,
+            type: 'single',
+            step: 1,
+            prefix: "Km",
+            grid: true
+        });
+      
+   
+    });
+	$(function(){ 
+	 $( ".dropdown-menu.bor" ).click(function( event ) {
+        event.stopPropagation();
+     });
+	$('.x, .btn.btn-ook1').click(function(){
+	  $('.dropdown.drop').removeClass('open');	
+	}); 
+   }); 
+   
+  
+
+	
+var input = $("#location").get(0);
+ var autocomplete = new google.maps.places.Autocomplete(input);
+ /*
+var input = document.getElementById('location');
+  google.maps.event.addDomListener(input, 'keydown', function(e) { 
+    if (e.keyCode == 13) { 
+        e.preventDefault(); 
+    }
+  });  */
+
+google.maps.event.addListener(autocomplete, 'place_changed', function(e, l) {
+	console.log(l);
+    var place = autocomplete.getPlace();
+    
+    $("#lat").val(place.geometry.location.lat());
+
+    $("#lng").val(place.geometry.location.lng());
+
+    $("#city").val(place.name);
+
+
+    for (var i = 0; i < place.address_components.length; i++) {
+    	var addressType = place.address_components[i].types[0];
+    	if (addressType == 'country') {
+      		var country = place.address_components[i]['long_name'];
+      		$("#country").val(country);
+      		break;
+    	}
+  	}
+    
+
+    });
+	
+	  (function($){
+ $(document).ready(function() {	  
+	  	var interestsearch_selected = 0;
+		var my_interest= $("#my_interest").val();
+		$("#interests_search").autocomplete({
+               source: function(request,response)
+			   {
+					$.ajax({
+					type:"post",
+					url:"{{URL::to('dashboard/getinterests')}}",
+					dataType:"json",
+					data:
+					{
+					query:request.term
+					},
+					success:function(data){
+					console.log(data);
+					response(data);
+					
+					},
+					error:function(){
+					alert("Error!Something went wrong! Try again.");
+					}
+					});
+			   
+			   },
+			   minLength:2,
+			   select:function(event,ui)
+			   {
+			   		event.stopPropagation();
+					jQuery(this).val(ui.item.value);
+			   
+			   },
+			   open: function () {
+			   setTimeout(function () {
+            $('.ui-autocomplete').css('z-index', 99999999999999);
+        }, 0);
+		 		jQuery(this).removeClass("ui-corner-all").addClass("ui-corner-top");
+			},
+			
+			   change:function(event,ui)
+			   {
+					if (ui.item) {
+				}
+				
+			   },
+			   close: function() {
+       $( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
+      }
+     }).val(my_interest).data('autocomplete');
+	 
+	 var $checkboxes = $('input[type=checkbox]');
+
+	 $("#interests_search").val("{{$pref_interest}}");
+
+
+
+	 //var input= document.getElementById('inputId');
+google.maps.event.addDomListener(input, 'keydown', function(e) { 
+    if (e.keyCode == 13 && $('.pac-container:visible').length) { 
+        e.preventDefault(); 
+    }
+}); 
+
+
+
+$('.pac-container:visible').click(function(event){
+     event.stopPropagation();
+ })
+
+	 
+	});
+      })(jQuery);
+
+    /*  	
+	$(function() { 
+  $('input[type="checkbox"]').bind('click',function() {
+    $('input[type="checkbox"]').not(this).prop("checked", false);
+  }); 
+});
+	*/
+	
+</script>
+
+
+
+@yield('scripts')
+
+	
+</body>
+</html>

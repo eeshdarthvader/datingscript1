@@ -1,0 +1,131 @@
+
+
+
+<?php $__env->startSection('content'); ?>
+
+<div class="row">
+    <div class="span6">
+        <div class="widget widget-nopad">
+             <!-- widget-header -->
+
+            <?php if(Session::has('disabled')): ?>
+                <div class="alert alert-link"><?php echo Session::get('disabled'); ?></div>
+             <?php endif; ?>
+
+            <div class="widget-header">
+                <i class="icon-list-alt"></i>
+                 <h3> Rewards Control </h3>
+            </div>
+            <!-- /widget-header -->
+              <!-- widget-content -->
+
+             <div class="widget-content">
+                <form action="<?php echo URL::to('rewards/updaterewardsettings'); ?>" method="post" id="edit-profile" class="form-horizontal">
+                        <br />
+                        <?php if(Session::has('enabled')): ?>
+                            <div class="alert alert-success"><?php echo Session::get('enabled'); ?></div>
+                         <?php endif; ?>
+
+                        <div class="control-group">
+                            <label class="control-label" for="title">Rewards</label>
+                            <div class="controls">
+                                <select class="span4" name="isrewards">
+                                    <option value="1" <?php if($isrewards == '1'): ?>  selected="selected" <?php endif; ?> >Enable</option>
+                                    <option value="0"  <?php if($isrewards == '0'): ?>  selected="selected" <?php endif; ?>>Disable</option>
+                                </select>
+                            </div> <!-- /controls -->
+                        </div> <!-- /control-group -->
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </div> <!-- /form-actions -->
+                </form><!-- /form -->
+
+            </div>  <!-- /widget content -->
+         </div>
+         <!-- /widget -->
+    </div>
+    <!-- /span6 -->
+
+
+</div>
+<!-- /row -->
+
+<?php if($isrewards == 1): ?>
+
+
+<div class="row">
+   <!-- /widget -->
+    <div class="span12">
+         <?php if(Session::has('rewards_topup_disabled')): ?>
+                        <div class="alert alert-link"><?php echo Session::get('rewards_topup_disabled'); ?></div>
+         <?php elseif(Session::has('rewards_disabled')): ?>
+                        <div class="alert alert-link"><?php echo Session::get('rewards_disabled'); ?></div>
+         <?php endif; ?>
+          <div class="widget widget-table action-table">
+            <div class="widget-header"> <i class="icon-th-list"></i>
+              <h3>Reward Details</h3>
+            </div>
+            <!-- /widget-header -->
+            <div class="widget-content">
+              <table class="table table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th> Reason</th>
+                    <th> Credits </th>
+                    <th class="td-actions"> Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                <form action="<?php echo url('rewards/updaterewards'); ?>"  class="form-horizontal" method="post">
+
+                  <tr>
+                  <?php foreach($rewards as $reward): ?>
+
+                    <td> <?php echo $reward->reason; ?> </td>
+                    <td><input class="span2" type="text" name="credits<?php echo $reward->id; ?>" value="<?php echo $reward->credits; ?>">  </td>
+                    <td class="td-actions">
+                       <select class="span2" name="isenable<?php echo $reward->id; ?>" >
+                           <option value="1" <?php if($reward->status == '1'): ?>  selected="selected" <?php endif; ?> >Enable</option>
+                           <option value="0" <?php if($reward->status == '0'): ?>  selected="selected" <?php endif; ?>>Disable</option>
+                       </select>
+                    </td>
+                  <?php endforeach; ?>
+                  </tr>
+
+                </tbody>
+              </table>
+
+            </div>
+            <!-- /widget-content -->
+
+              <div class="form-actions">
+                                  <button type="submit" class="btn btn-primary">Update</button>
+              </div> <!-- /form-actions -->
+
+          </form>
+
+          </div>
+          <!-- /widget -->
+
+    </div>
+</div>
+
+<?php endif; ?>
+
+
+
+
+
+<?php $__env->stopSection(); ?>
+
+
+
+
+<?php $__env->startSection('custom-js'); ?>
+
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin.layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
